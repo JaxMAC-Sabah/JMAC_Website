@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Community Event Calendar</title>
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
+  <style>
+    #calendar {
+      max-width: 900px;
+      margin: 2rem auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="text-align:center;">Community Events Calendar</h1>
+  <div id="calendar"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+  <script>
+    const calendarEl = document.getElementById('calendar');
+    const url = 'https://opensheet.elk.sh/1kvs0UEPlUaPICdJ3uGFV1Jxm7O_Q8OjgY6R2WC5tpQ8/Events';
+
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        const allEvents = data.map(row => ({  
+          title: `${row.Organization} – ${row.Name}` + (row.Resource_Type ? ` (${row.Resource_Type})` : ''),
+          start: row.Start_Date,
+          end: row.Date || row.End_Date,
+          description: row.Description || '',
+          location: row.Location_Name || '',
+        }));
+
+        const calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+          events: allEvents,
+
+          eventDidMount: function(info) {
+            const tooltip = `${info.event.title}\n${info.event.extendedProps.description}\n${info.event.extendedProps.location}`;
+            info.el.setAttribute('title', tooltip);
+          },
+
+          eventClick: function(info) {
+            const event = info.event;
+
+            alert(
+              `${event.title}` +
+              (event.extendedProps.description ? `\n\n${event.extendedProps.description}` : '') +
+              (event.extendedProps.location ? `\n\nLocation: ${event.extendedProps.location}` : '')
+            );
+          }
+        });
+        
+
+        calendar.render();
+      })
+      .catch(err => {
+        console.error('Error loading calendar data:', err);
+      });
+  </script>
+</body>
+</html>

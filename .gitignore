@@ -1,0 +1,15 @@
+# Ignore virtual environment
+env/
+
+# Ignore Python bytecode
+__pycache__/
+*.pyc
+
+# Ignore credential files
+*.json
+
+# Ignore Instagram session files
+*.session
+
+# Ignore VS Code settings (optional)
+.vscode/

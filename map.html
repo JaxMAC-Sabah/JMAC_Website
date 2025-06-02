@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Community Resource Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map { height: 600px; width: 100%; margin-top: 1em; }
+    #filter { margin-top: 1em; }
+  </style>
+</head>
+
+<body>
+
+  <h1>Community Resources</h1>
+
+<!-- Establish filter dropdown -->
+  <label for="filter">Filter by Type:</label>
+  <select id="filter">
+    <option value="All">All</option>
+  </select>
+
+<!-- map container -->
+  <div id="map"></div>
+
+<!-- import access to Leaflet Library -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- Initialize map and tiles  -->
+  <script>
+    const map = L.map('map').setView([30.3322, -81.6557], 11); // Jacksonville default center
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Get spreadsheet data - references sheets doc
+    const url = 'https://opensheet.elk.sh/1kvs0UEPlUaPICdJ3uGFV1Jxm7O_Q8OjgY6R2WC5tpQ8/Organizations';
+    const allMarkers = [];
+
+    // GET request to spreadsheet and parse data into JSON
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        console.log("Fetched data:", data);  // ← add this
+        const resourceTypes = new Set();
+
+        data.forEach(row => {
+          const lat = parseFloat(row.Latitude);
+          const lng = parseFloat(row.Longitude);
+
+          if (!isNaN(lat) && !isNaN(lng)) {
+            const marker = L.marker([lat, lng]).bindPopup(`
+              <strong>${row.Name}</strong><br>
+              Type: ${row.Resource_Type}<br>
+              ${row.Description || ''}<br>
+              ${row.Address || ''}<br>
+              <a href="${row.Contact_Website}" target="_blank">${row.Contact_Website}</a>
+            `);
+            marker.resourceType = row.Resource_Type;
+            marker.addTo(map);
+            allMarkers.push(marker);
+            resourceTypes.add(row.Resource_Type);
+          }
+        });
+
+        // Populate dropdown menu 
+        const filterSelect = document.getElementById('filter');
+        resourceTypes.forEach(resourceType => {
+          const option = document.createElement('option');
+          option.value = resourceType;
+          option.textContent = resourceType;
+          filterSelect.appendChild(option);
+        });
+
+        filterSelect.addEventListener('change', () => {
+          const selected = filterSelect.value;
+          allMarkers.forEach(marker => {
+            if (selected === "All" || marker.resourceType === selected) {
+              marker.addTo(map);
+            } else {
+              map.removeLayer(marker);
+            }
+          });
+        });
+      })
+      .catch(err => {
+        console.error('Error loading data:', err);
+      });
+  </script>
+</body>
+</html>
