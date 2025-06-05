@@ -56,11 +56,16 @@
     }
 
     iframe {
-      border: none;
       flex: 1 1 600px;
       max-width: 900px;
       height: 600px;
     }
+
+    iframe {
+      flex: 1 1 600px;
+      max-width: 900px;
+      height: 600px;
+    } 
 
     .subscribe-buttons {
       flex: 0 1 250px;
@@ -69,22 +74,23 @@
       gap: 1em;
     }
 
-    .subscribe-buttons a button {
-      padding: 10px;
-      font-size: 14px;
-      background-color: #2b6cb0;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
     footer {
       background-color: black;
       color: white;
       text-align: center;
       padding: 1em;
       margin-top: 2em;
+    }
+
+    @media (max-width: 700px) {
+    .calendar-section {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .subscribe-buttons {
+      width: 100%;
+      align-items: center;
     }
   </style>
 </head>
