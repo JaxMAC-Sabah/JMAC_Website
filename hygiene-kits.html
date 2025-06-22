@@ -50,42 +50,16 @@
       border-radius: 8px;
     }
 
-    .items-table {
-      width: 100%;
+    #inventory-output {
+      margin: 1em auto;
       max-width: 700px;
-      margin: 1.5em auto;
-      border-collapse: collapse;
-      font-size: 1em;
+      padding: 1em;
     }
 
-    .items-table th,
-    .items-table td {
-      border: 1px solid #ddd;
-      padding: 0.75em;
-      text-align: left;
-    }
-
-    .items-table thead {
-      background-color: #f44336;
-      color: white;
-    }
-
-    .items-table tbody tr:nth-child(even):not(.subheading-row) {
-      background-color: #f9f9f9;
-    }
-
-   .items-table .high-need {
-      border-left: 6px solid red;
-      font-weight: bold;
-    }
-
-    .subheading-row {
-      background-color: #eee;
-      font-weight: bold;
-      font-size: 1.05em;
-      text-align: left;
-      border-top: 2px solid #ccc;
-      padding-top: 1em;
+    #inventory-output h3 {
+      margin-top: 0.5em;
+      border-bottom: 4px solid #ccc;
+      padding-bottom: 0.5em;
     }
 
     .event-box {
@@ -126,6 +100,7 @@
   </style>
 </head>
 
+<script src="fetch_hygiene_kit_data.js"></script>
 <body>
 
   <header>
@@ -155,65 +130,7 @@
     </div>
 
     <h2>What We Need</h2>
-    
-    <table class="items-table">
-        <thead>
-          <tr>
-            <th>Item</th>
-            <th>Quantity Needed</th>
-          </tr>
-        </thead>
-          <tbody>
-            <tr><td>Gallon Ziplock Bags</td><td>0</td></tr>
-            <tr><td>Toothbrushes</td><td>0</td></tr>
-            <tr><td>Toothpastes</td><td>0</td></tr>
-            <tr class="high-need"><td>Deodorant</td><td>150</td></tr>
-            <tr class="high-need"><td>Shampoos</td><td>150</td></tr>
-            <tr class="high-need"><td>Soap</td><td>134</td></tr>
-            <tr class="high-need"><td>Soap Boxes (3D-printed)</td><td>137</td></tr>
-            <tr><td>Lip Balm</td><td>0</td></tr>
-            <tr><td>Sunscreen</td><td>11</td></tr>
-            <tr class="high-need"><td>Lotion</td><td>78</td></tr>
-            <tr><td>Hand Sanitizer</td><td>25</td></tr>
-            <tr class="high-need"><td>Nail Clippers</td><td>136</td></tr>
-            <tr class="high-need"><td>Notebooks</td><td>111</td></tr>
-            <tr><td>Pens and Pencils</td><td>0</td></tr>
-            <tr><td>Combs</td><td>0</td></tr>
-            <tr class="high-need"><td>Shaving Kits</td><td>100</td></tr>
-            <tr class="high-need"><td>Narcan</td><td>66</td></tr>
-            <tr class="high-need"><td>Electrolyte Packets</td><td>70</td></tr>
-            <tr class="high-need"><td>Water</td><td>110</td></tr>
-            <tr><td>Socks</td><td>50</td></tr>
-            <tr class="high-need"><td>Q-tip Containers (3D printed)</td><td>86</td></tr>
-            <tr><td>Q-tips</td><td>0</td></tr>
-            <tr><td>Condoms</td><td>0</td></tr>
-            <tr class="high-need"><td>Wipes</td><td>100</td></tr>
-            <tr class="high-need"><td>Snacks</td><td>100</td></tr>
-            <tr class="high-need"><td>Face Masks</td><td>450</td></tr>
-            <tr class="high-need"><td>Hair Ties</td><td>240</td></tr>
-            <tr class="high-need"><td>Fentanyl Test Strips</td><td>400</td></tr>
-
-            <tr class="subheading-row">
-                <td colspan="2">First Aid Kit</td>
-              </tr>
-              <tr><td>Small Zipper Bag</td><td>74</td></tr>
-              <tr><td>Tylenol or Advil</td><td>0</td></tr>
-              <tr class="high-need"><td>Alcohol Wipes</td><td>300</td></tr>
-              <tr class="high-need"><td>Bandaids</td><td>320</td></tr>
-              <tr class="high-need"><td>Eye Drops</td><td>150</td></tr>
-              <tr class="high-need"><td>Alka-Seltzer Cold and Flu</td><td>100</td></tr>
-
-              <tr class="subheading-row">
-                <td colspan="2">Period Packs</td>
-              </tr>
-              <tr class="high-need"><td>Pregnancy Tests</td><td>145</td></tr>
-              <tr class="high-need"><td>Regular Menstrual Pads</td><td>330</td></tr>
-              <tr class="high-need"><td>Menstrual Liners</td><td>380</td></tr>
-              <tr class="high-need"><td>Tampons</td><td>350</td></tr>
-              <tr><td>Tylenol or Advil</td><td>0</td></tr>
-          </tbody>
-      </table>
-
+    <div id="inventory-output"></div>
 
     <div class="event-box">
       🧼 Join us for our Hygiene Kit Assembly Night!<br />

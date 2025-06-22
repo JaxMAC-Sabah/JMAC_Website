@@ -60,6 +60,7 @@ fi
 
 # Step 2: Activate the virtual environment
 source env/bin/activate
+echo "✅ Virtual environment is now active: $VIRTUAL_ENV"
 
 # Step 3: Install required packages
 echo "📦 Installing dependencies..."
