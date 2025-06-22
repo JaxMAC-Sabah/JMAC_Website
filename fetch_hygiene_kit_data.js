@@ -5,16 +5,22 @@ fetch("https://opensheet.elk.sh/1omcx2qzhJ-Xv3Opvr-8rMg3nK5IRm85CfSnjg1qQze0/Gen
   .then(res => res.json())
   .then(data => {
 
-    console.log("Example row: ", data[20]);
+    const lastUpdated = data[0].Item;
+
+    console.log(lastUpdated);
 
     function extractAndSortSection(start, end) {
       return data
       .slice(start, end + 1)
       .filter(row => row["Item"] && row["Qty"])
-      .map(row => ({
-        Item: row["Item"].trim(),
-        Qty: parseInt(row["Qty"]),
-        }))
+      .map(row => {
+        const qty = parseInt(row["Qty"]);
+        return {
+          Item: row["Item"].trim(),
+          Qty: qty < 0 ? 0 : qty
+          };
+        })
+      
       .sort((a, b) => b.Qty - a.Qty);
       }
 
@@ -52,6 +58,10 @@ fetch("https://opensheet.elk.sh/1omcx2qzhJ-Xv3Opvr-8rMg3nK5IRm85CfSnjg1qQze0/Gen
       renderSection("First Aid Kit", sections.first_aid_kit);
       renderSection("Period Pack", sections.period_pack);
       renderSection("Miscellaneous", sections.misc);
+
+      const updatedDiv = document.getElementById("last-updated");
+      updatedDiv.textContent = lastUpdated;
+
 
         })
   .catch(err => {
