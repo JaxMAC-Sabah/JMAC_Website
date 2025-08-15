@@ -40,7 +40,7 @@ a:hover{text-decoration:underline}
 /* Headings */
 h1,h2,h3{ line-height:1.2; margin:.2em 0 .4em}
 h1{ font-size:2rem}
-h2{ font-size:1.4rem; border-bottom:2px solid var(--border); padding-bottom:.35rem; margin-top:1.5rem}
+h2{ font-size:1.4rem; border-bottom:2px solid var(--border); padding-bottom:.35rem; margin-top:1.5rem; padding-left: 1rem; padding-right: 1rem;}
 h3{ font-size:1.1rem; color:var(--muted); text-transform:uppercase; letter-spacing:.03em}
 
 /* Buttons */
@@ -60,14 +60,46 @@ h3{ font-size:1.1rem; color:var(--muted); text-transform:uppercase; letter-spaci
   box-shadow: 0 2px 10px rgba(0,0,0,.04);
 }
 
-/* Tables */
-.table{
-  width:100%; border-collapse:collapse; background:#fff; border:1px solid var(--border); border-radius:10px; overflow:hidden;
+/********************************* Tables **********************************/
+/* th - table header, td - table data, tr - table rows  */
+table{
+  width: min(100%, 600px); 
+  margin: 0 auto; 
+  border-collapse:collapse; 
+  background:#fff; 
+  border:1px solid var(--border); 
+  border-radius:10px; 
+  overflow:hidden;
 }
-.table th, .table td{ padding:.75rem; border-bottom:1px solid var(--border); text-align:center}
-.table th{ background:var(--brand-red); color:#fff; font-weight:700}
-.table tr:nth-child(even) td{ background:#fcfcfc}
-.table caption{ text-align:left; padding:.5rem 0; color:var(--muted)}
+table th{ 
+  padding: 0.25% 10% 0.25% 10%;
+  border-bottom:1px solid var(--border); 
+  vertical-align: middle;
+  background:var(--brand-red); 
+  color:#fff; 
+  font-weight:700
+}
+
+
+table tr:nth-child(even) td{ background:#f3f0f0}
+table caption{ text-align:left; padding:.5rem 0; color:var(--muted)}
+
+.two-col{
+  table-layout: fixed;           /* prevents content from changing column widths */
+  width: min(100%, 600px);       
+}
+
+.two-col tr td:first-child, .two-col th:first-child { 
+  text-align: left;
+  vertical-align: middle;   
+  padding: 0.25% 0 0.25% 17%;
+}
+.two-col tr td:nth-child(2), .two-col th:nth-child(2){ 
+  text-align: center;
+  vertical-align: middle;   
+  padding: 0.25%; 
+}
+.two-col td { word-wrap: break-word; } 
 
 /* Form controls */
 input[type="number"], input[type="text"], input[type="email"]{
@@ -98,6 +130,7 @@ input[type="number"]:focus, input[type="text"]:focus, input[type="email"]:focus{
 /* Section spacing */
 .section{ margin-top:2rem }
 .section h2{ margin-top:0 }
+
 
 /* Responsive layout */
 @media (max-width: 720px){

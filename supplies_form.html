@@ -6,17 +6,12 @@
   <title>Supply Pledge Form</title>
   <link rel="stylesheet" href="styles/styles.css">
   <style>
-    th, td {
-      border: 1px solid #ddd;
-      padding: 0.75em;
-      text-align: center;
-    }
-    th {
-      background-color: #f44336;
-      color: white;
-    }
     section {
       margin-bottom: 3em;
+    }
+    section h2 {
+      width: min(100%, 600px);
+      margin: 0 auto; 
     }
     #output {
       white-space: pre-wrap;
@@ -30,129 +25,160 @@
   <h1>What Are You Bringing?</h1>
   <form id="pledge-form">
     <section>
-      <h2>Toiletries</h2>
-      <table>
-        <tr><th>Item</th><th>Bringing?</th><th>How Many?</th></tr>
-        <tr><td>Toothbrushes</td><td><input type="checkbox" name="toothbrushes"></td><td><input type="number" name="qty_toothbrushes" min="0"></td></tr>
-        <tr><td>Toothpaste</td><td><input type="checkbox" name="toothpaste"></td><td><input type="number" name="qty_toothpaste" min="0"></td></tr>
-        <tr><td>Deodorant</td><td><input type="checkbox" name="deodorant"></td><td><input type="number" name="qty_deodorant" min="0"></td></tr>
-        <tr><td>Shampoo</td><td><input type="checkbox" name="shampoo"></td><td><input type="number" name="qty_shampoo" min="0"></td></tr>
-        <tr><td>Soap</td><td><input type="checkbox" name="soap"></td><td><input type="number" name="qty_soap" min="0"></td></tr>
-        <tr><td>Soap Box</td><td><input type="checkbox" name="soap_box"></td><td><input type="number" name="qty_soap_box" min="0"></td></tr>
-        <tr><td>Lip Balm</td><td><input type="checkbox" name="lip_balm"></td><td><input type="number" name="qty_lip_balm" min="0"></td></tr>
-        <tr><td>Sunscreen</td><td><input type="checkbox" name="sunscreen"></td><td><input type="number" name="qty_sunscreen" min="0"></td></tr>
-        <tr><td>Lotion</td><td><input type="checkbox" name="lotion"></td><td><input type="number" name="qty_lotion" min="0"></td></tr>
-        <tr><td>Hand Sanitizer</td><td><input type="checkbox" name="hand_sanitizer"></td><td><input type="number" name="qty_hand_sanitizer" min="0"></td></tr>
-        <tr><td>Nail Clippers</td><td><input type="checkbox" name="nail_clippers"></td><td><input type="number" name="qty_nail_clippers" min="0"></td></tr>
-        <tr><td>Shaving Kit</td><td><input type="checkbox" name="shaving_kit"></td><td><input type="number" name="qty_shaving_kit" min="0"></td></tr>
-        <tr><td>Combs</td><td><input type="checkbox" name="combs"></td><td><input type="number" name="qty_combs" min="0"></td></tr>
-        <tr><td>Q-tip Container</td><td><input type="checkbox" name="qtip_container"></td><td><input type="number" name="qty_qtip_container" min="0"></td></tr>
-        <tr><td>Q-tips</td><td><input type="checkbox" name="qtips"></td><td><input type="number" name="qty_qtips" min="0"></td></tr>
-        <tr><td>Wipes</td><td><input type="checkbox" name="wipes"></td><td><input type="number" name="qty_wipes" min="0"></td></tr>
+      <table class="two-col">
+        <colgroup>
+          <col class="col-item">
+          <col class="col-qty">
+        </colgroup>
+        <tr><th>Toiletries</th><th>How Many?</th></tr>
+        <tr><td>Toothbrushes</td><td><input type="number" name="qty_toothbrushes" min="0"></td></tr>
+        <tr><td>Toothpaste</td><td><input type="number" name="qty_toothpaste" min="0"></td></tr>
+        <tr><td>Deodorant</td><td><input type="number" name="qty_deodorant" min="0"></td></tr>
+        <tr><td>Shampoo</td><td><input type="number" name="qty_shampoo" min="0"></td></tr>
+        <tr><td>Soap</td><td><input type="number" name="qty_soap" min="0"></td></tr>
+        <tr><td>Soap Box</td><td><input type="number" name="qty_soap_box" min="0"></td></tr>
+        <tr><td>Lip Balm</td><td><input type="number" name="qty_lip_balm" min="0"></td></tr>
+        <tr><td>Sunscreen</td><td><input type="number" name="qty_sunscreen" min="0"></td></tr>
+        <tr><td>Lotion</td><td><input type="number" name="qty_lotion" min="0"></td></tr>
+        <tr><td>Hand Sanitizer</td><td><input type="number" name="qty_hand_sanitizer" min="0"></td></tr>
+        <tr><td>Nail Clippers</td><td><input type="number" name="qty_nail_clippers" min="0"></td></tr>
+        <tr><td>Nail File</td><td><input type="number" name="qty_nail_files" min="0"></td></tr>
+        <tr><td>Shaving Kit</td></td><td><input type="number" name="qty_shaving_kit" min="0"></td></tr>
+        <tr><td>Combs</td><td><input type="number" name="qty_combs" min="0"></td></tr>
+        <tr><td>Q-tip Container</td><td><input type="number" name="qty_qtip_container" min="0"></td></tr>
+        <tr><td>Q-tips</td><td><input type="number" name="qty_qtips" min="0"></td></tr>
+        <tr><td>Wipes</td><td><input type="number" name="qty_wipes" min="0"></td></tr>
+      </table>
+
+      <table class="two-col">
+        <colgroup>
+          <col class="col-item">
+          <col class="col-qty">
+        </colgroup>
+        <tr><th>Medical Supplies </th><th>How Many?</th></tr>
+        <tr><td>Tylenol</td><td><input type="number" name="qty_tylenol" min="0"></td></tr>
+        <tr><td>Advil</td><td><input type="number" name="qty_advil" min="0"></td></tr>
+        <tr><td>Alcohol Wipes</td><td><input type="number" name="qty_alcohol_wipes" min="0"></td></tr>
+        <tr><td>Bandaids</td><td><input type="number" name="qty_bandaids" min="0"></td></tr>
+        <tr><td>Eye Drops</td><td><input type="number" name="qty_eye_drops" min="0"></td></tr>
+        <tr><td>Alka-Seltzer Cold/Flu</td><td><input type="number" name="qty_alkaseltzer_coldflu" min="0"></td></tr>
+        <tr><td>Face Masks</td><td><input type="number" name="qty_face_masks" min="0"></td></tr>
+        <tr><td>Condoms</td><td><input type="number" name="qty_condoms" min="0"></td></tr>
+        <tr><td>Electrolyte Packs</td><td><input type="number" name="qty_electrolyte_packs" min="0"></td></tr>
+        <tr><td>Fentanyl Test Strips</td><td><input type="number" name="qty__fentanyl_test_strips" min="0"></td></tr>
+        <tr><td>Narcan</td><td><input type="number" name="qty_narcan" min="0"></td></tr>
+      </table>
+
+      <table class="two-col">
+        <colgroup>
+          <col class="col-item">
+          <col class="col-qty">
+        </colgroup>
+        <tr><th>Menstrual Supplies</th><th>How Many?</th></tr>
+        <tr><td>Menstrual Pads</td><td><input type="number" name="qty_pads" min="0"></td></tr>
+        <tr><td>Tampons</td><td><input type="number" name="qty_tampons" min="0"></td></tr>
+        <tr><td>Menstrual Liners</td><td><input type="number" name="qty_liners" min="0"></td></tr>
+        <tr><td>Pregnancy Test</td><td><input type="number" name="qty_pregnancy_test" min="0"></td></tr>
+      </table>
+
+      <table class="two-col">
+        <colgroup>
+          <col class="col-item">
+          <col class="col-qty">
+        </colgroup>
+        <tr><th>Miscellaneous Supplies</th><th>How Many?</th></tr>
+        <tr><td>Gallon Zip Lock Bag</td><td><input type="number" name="qty_gallon_zip_lock_bag" min="0"></td></tr>
+        <tr><td>Small Zipper Bags</td><td><input type="number" name="qty_small_zipper_bag" min="0"></td></tr>
+        <tr><td>Playing Cards</td><td><input type="number" name="qty_playing_cards" min="0"></td></tr>
+        <tr><td>Sunglasses</td><td><input type="number" name="qty_sunglasses" min="0"></td></tr>
+        <tr><td>Lighters</td><td><input type="number" name="qty_lighters" min="0"></td></tr>
+        <tr><td>Bus Passes</td><td><input type="number" name="qty_bus_passes" min="0"></td></tr>
+        <tr><td>Poncho</td><td><input type="number" name="qty_ponchos" min="0"></td></tr>
+        <tr><td>Notebooks</td><td><input type="number" name="qty_notebook" min="0"></td></tr>
+        <tr><td>Pens/Pencils</td><td><input type="number" name="qty_pen_pencil" min="0"></td></tr>
+        <tr><td>Hair Ties</td><td><input type="number" name="qty_hair_tie" min="0"></td></tr>
+        <tr><td>Socks</td><td><input type="number" name="qty_socks" min="0"></td></tr>
+      </table>
+
+      <table class="two-col">
+        <colgroup>
+          <col class="col-item">
+          <col class="col-qty">
+        </colgroup>
+        <tr><th>Food Items</th><th>How Many?</th></tr>
+        <tr><td>Snack</td><td><input type="number" name="qty_snack" min="0"></td></tr>
+        <tr><td>Water Bottles</td><td><input type="number" name="qty_water" min="0"></td></tr>
       </table>
     </section>
 
-    <section>
-      <h2>Bags</h2>
-      <table>
-        <tr><th>Item</th><th>Bringing?</th><th>How Many?</th></tr>
-        <tr><td>Gallon Zip Lock Bag</td><td><input type="checkbox" name="gallon_zip_lock_bag"></td><td><input type="number" name="qty_gallon_zip_lock_bag" min="0"></td></tr>
-        <tr><td>Small Zipper Bags</td><td><input type="checkbox" name="small_zipper_bags"></td><td><input type="number" name="qty_small_zipper_bag" min="0"></td></tr>
-      </table>
-    </section>
-
-    <section>
-      <h2>Medical Supplies</h2>
-      <table>
-        <tr><th>Item</th><th>Bringing?</th><th>How Many?</th></tr>
-        <tr><td>Tylenol</td><td><input type="checkbox" name="tylenol"></td><td><input type="number" name="qty_tylenol" min="0"></td></tr>
-        <tr><td>Advil</td><td><input type="checkbox" name="advil"></td><td><input type="number" name="qty_advil" min="0"></td></tr>
-        <tr><td>Alcohol Wipes</td><td><input type="checkbox" name="alcohol_wipes"></td><td><input type="number" name="qty_alcohol_wipes" min="0"></td></tr>
-        <tr><td>Bandaids</td><td><input type="checkbox" name="bandaids"></td><td><input type="number" name="qty_bandaids" min="0"></td></tr>
-        <tr><td>Eye Drops</td><td><input type="checkbox" name="eye_drops"></td><td><input type="number" name="qty_eye_drops" min="0"></td></tr>
-        <tr><td>Alka-Seltzer Cold/Flu</td><td><input type="checkbox" name="alkaseltzer_coldflu"></td><td><input type="number" name="qty_alkaseltzer_coldflu" min="0"></td></tr>
-        <tr><td>Face Masks</td><td><input type="checkbox" name="face_masks"></td><td><input type="number" name="qty_face_masks" min="0"></td></tr>
-        <tr><td>Condoms</td><td><input type="checkbox" name="condoms"></td><td><input type="number" name="qty_condoms" min="0"></td></tr>
-        <tr><td>Electrolyte Packs</td><td><input type="checkbox" name="electrolyte_packs"></td><td><input type="number" name="qty_electrolyte_packs" min="0"></td></tr>
-        <tr><td>Fentanyl Test Strips</td><td><input type="checkbox" name="fentanyl_test_strips"></td><td><input type="number" name="qty__fentanyl_test_strips" min="0"></td></tr>
-        <tr><td>Narcan</td><td><input type="checkbox" name="narcan"></td><td><input type="number" name="qty_narcan" min="0"></td></tr>
-        
-      </table>
-    </section>
-
-    <section>
-      <h2>Menstrual Supplies</h2>
-      <table>
-        <tr><th>Item</th><th>Bringing?</th><th>How Many?</th></tr>
-        <tr><td>Menstrual Pads</td><td><input type="checkbox" name="pads"></td><td><input type="number" name="qty_pads" min="0"></td></tr>
-        <tr><td>Tampons</td><td><input type="checkbox" name="tampons"></td><td><input type="number" name="qty_tampons" min="0"></td></tr>
-        <tr><td>Menstrual Liners</td><td><input type="checkbox" name="liners"></td><td><input type="number" name="qty_liners" min="0"></td></tr>
-        <tr><td>Pregnancy Test</td><td><input type="checkbox" name="pregnancy_test"></td><td><input type="number" name="qty_pregnancy_test" min="0"></td></tr>
-        
-      </table>
-    </section>
-
-    <section>
-      <h2>Miscellaneous</h2>
-      <table>
-        <tr><th>Item</th><th>Bringing?</th><th>How Many?</th></tr>
-        <tr><td>Playing Cards</td><td><input type="checkbox" name="playing_cards"></td><td><input type="number" name="qty_playing_cards" min="0"></td></tr>
-        <tr><td>Sunglasses</td><td><input type="checkbox" name="sunglasses"></td><td><input type="number" name="qty_sunglasses" min="0"></td></tr>
-        <tr><td>Lighters</td><td><input type="checkbox" name="lighter"></td><td><input type="number" name="qty_lighters" min="0"></td></tr>
-        <tr><td>Bus Passes</td><td><input type="checkbox" name="bus_pass"></td><td><input type="number" name="qty_bus_passes" min="0"></td></tr>
-        <tr><td>Poncho</td><td><input type="checkbox" name="poncho"></td><td><input type="number" name="qty_ponchos" min="0"></td></tr>
-        <tr><td>Nail File</td><td><input type="checkbox" name="nail_file"></td><td><input type="number" name="qty_nail_files" min="0"></td></tr>
-        <tr><td>Notebooks</td><td><input type="checkbox" name="notebook"></td><td><input type="number" name="qty_notebook" min="0"></td></tr>
-        <tr><td>Pens/Pencils</td><td><input type="checkbox" name="pen_pencil"></td><td><input type="number" name="qty_pen_pencil" min="0"></td></tr>
-        <tr><td>Hair Ties</td><td><input type="checkbox" name="hair_tie"></td><td><input type="number" name="qty_hair_tie" min="0"></td></tr>
-        <tr><td>Socks</td><td><input type="checkbox" name="socks"></td><td><input type="number" name="qty_socks" min="0"></td></tr>
-       
-      </table>
-    </section>
-
-    <section>
-      <h2>Food Items</h2>
-      <table>
-        <tr><th>Item</th><th>Bringing?</th><th>How Many?</th></tr>
-        <tr><td>Snack</td><td><input type="checkbox" name="snack"></td><td><input type="number" name="qty_snack" min="0"></td></tr>
-        <tr><td>Water Bottles</td><td><input type="checkbox" name="water"></td><td><input type="number" name="qty_water" min="0"></td></tr>
-      </table>
-    </section>
-
-    <button type="submit">Submit</button>
-  </form>
-
-
-
-
-
-
-
-
+    <button type="Submit">Submit</button>
+  </form> 
 
   <h3>Submitted Data:</h3>
   <div id="output"></div>
 
   <script>
-    document.getElementById('pledge-form').addEventListener('submit', function (e) {
-      e.preventDefault();
+  const WEB_APP_URL = "PASTE_YOUR_WEB_APP_URL_HERE"; // e.g. https://script.google.com/macros/s/AKfycb.../exec
 
-      const form = e.target;
-      const data = {};
-      const items = ['toothbrushes', 'socks', 'shampoo'];
+  document.getElementById('pledge-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const form = e.target;
 
-      items.forEach(item => {
-        const checked = form[item].checked;
-        const quantity = parseInt(form[`qty_${item}`].value);
+    // 1) Collect items the same way you already do
+    const names = [
+      'toothbrushes','shampoo',
+      'bandages','wipes',
+      'pads','tampons',
+      'blankets','trashbags',
+      'granola','water'
+    ];
 
-        if (checked && !isNaN(quantity) && quantity > 0) {
-          data[item] = quantity;
-        }
-      });
-
-      // Output the data to the screen for now
-      document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+    const items = {};
+    names.forEach(n => {
+      const checked = form[n]?.checked;
+      const qty = parseInt(form[`qty_${n}`]?.value, 10);
+      if (checked && !isNaN(qty) && qty > 0) items[n] = qty;
     });
-  </script>
+
+    // Optional donor info fields (add inputs with these names if you want)
+    const name = form['donor_name']?.value?.trim() || "";
+    const email = form['donor_email']?.value?.trim() || "";
+    const section = ""; // or set per section if you submit one table at a time
+
+    // 2) Basic guard
+    if (Object.keys(items).length === 0) {
+      alert("Please select at least one item and enter a quantity > 0.");
+      return;
+    }
+
+    // 3) Send to Apps Script
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Submitting…";
+
+    try {
+      const res = await fetch(WEB_APP_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ items, name, email, section })
+      });
+      const json = await res.json().catch(() => ({}));
+      // Preview + success UI
+      document.getElementById('output').textContent = JSON.stringify(json, null, 2);
+      if (json.ok) {
+        alert("Thanks! Your pledge was recorded.");
+        form.reset();
+      } else {
+        alert("Submission error: " + (json.error || "Unknown error"));
+      }
+    } catch (err) {
+      alert("Network error submitting form. Please try again.");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Submit";
+    }
+  });
+</script>
+
 </body>
 </html>
