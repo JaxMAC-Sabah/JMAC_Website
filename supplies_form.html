@@ -9,9 +9,32 @@
     section {
       margin-bottom: 3em;
     }
-    section h2 {
-      width: min(100%, 600px);
-      margin: 0 auto; 
+    .align-w-table{
+      width: min(100%, 600px);  
+      margin: 0 auto;           
+      padding: 0.5rem;      
+    }
+    .align-w-table input[type="text"] {
+      width: 100%;
+      max-width: 240px;  
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+    button {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: min(100%, 600px);   
+      padding: 0.5rem 1rem;
+      background: var(--brand-red);
+      color: #fff;
+      border-radius: 10px; 
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
     }
     #output {
       white-space: pre-wrap;
@@ -22,9 +45,20 @@
   </style>
 </head>
 <body>
-  <h1>What Are You Bringing?</h1>
+  <div class="align-w-table">
+    <h1>What Are You Bringing?</h1>
+    <p>This form serves as a way to inform JMAC of the items you intend to bring to the hygiene kit assembly event at {location} at {time}. Items may also be dropped off at {} before the event. We will send a remind email {} days prior with a reminder of the event and the items you indicated you would bring.   </p>
+  </div>
   <form id="pledge-form">
-    <section>
+    <section class="align-w-table">
+      <h3>Contact Information</h3>
+        <label for="fname">Name:</label>
+        <input type="text" name="fname">
+        <label for="email">Email:</label>
+        <input type="text" name="email"><br>
+    </section>
+    <section class="align-w-table">
+      <h3>What are you bringing?</h3>
       <table class="two-col">
         <colgroup>
           <col class="col-item">
@@ -33,13 +67,10 @@
         <tr><th>Toiletries</th><th>How Many?</th></tr>
         <tr><td>Toothbrushes</td><td><input type="number" name="qty_toothbrushes" min="0"></td></tr>
         <tr><td>Toothpaste</td><td><input type="number" name="qty_toothpaste" min="0"></td></tr>
-        <tr><td>Deodorant</td><td><input type="number" name="qty_deodorant" min="0"></td></tr>
-        <tr><td>Shampoo</td><td><input type="number" name="qty_shampoo" min="0"></td></tr>
-        <tr><td>Soap</td><td><input type="number" name="qty_soap" min="0"></td></tr>
+        <tr><td>Deodorant</td><td><input type="number" name="qty_deodorant" min="0"></td></tr>        <tr><td>Shampoo</td><td><input type="number" name="qty_shampoo" min="0"></td></tr>       <tr><td>Soap</td><td><input type="number" name="qty_soap" min="0"></td></tr>
         <tr><td>Soap Box</td><td><input type="number" name="qty_soap_box" min="0"></td></tr>
         <tr><td>Lip Balm</td><td><input type="number" name="qty_lip_balm" min="0"></td></tr>
-        <tr><td>Sunscreen</td><td><input type="number" name="qty_sunscreen" min="0"></td></tr>
-        <tr><td>Lotion</td><td><input type="number" name="qty_lotion" min="0"></td></tr>
+        <tr><td>Sunscreen</td><td><input type="number" name="qty_sunscreen" min="0"></td></tr>       <tr><td>Lotion</td><td><input type="number" name="qty_lotion" min="0"></td></tr>
         <tr><td>Hand Sanitizer</td><td><input type="number" name="qty_hand_sanitizer" min="0"></td></tr>
         <tr><td>Nail Clippers</td><td><input type="number" name="qty_nail_clippers" min="0"></td></tr>
         <tr><td>Nail File</td><td><input type="number" name="qty_nail_files" min="0"></td></tr>
@@ -49,75 +80,79 @@
         <tr><td>Q-tips</td><td><input type="number" name="qty_qtips" min="0"></td></tr>
         <tr><td>Wipes</td><td><input type="number" name="qty_wipes" min="0"></td></tr>
       </table>
-
       <table class="two-col">
-        <colgroup>
-          <col class="col-item">
-          <col class="col-qty">
-        </colgroup>
-        <tr><th>Medical Supplies </th><th>How Many?</th></tr>
-        <tr><td>Tylenol</td><td><input type="number" name="qty_tylenol" min="0"></td></tr>
-        <tr><td>Advil</td><td><input type="number" name="qty_advil" min="0"></td></tr>
-        <tr><td>Alcohol Wipes</td><td><input type="number" name="qty_alcohol_wipes" min="0"></td></tr>
-        <tr><td>Bandaids</td><td><input type="number" name="qty_bandaids" min="0"></td></tr>
-        <tr><td>Eye Drops</td><td><input type="number" name="qty_eye_drops" min="0"></td></tr>
-        <tr><td>Alka-Seltzer Cold/Flu</td><td><input type="number" name="qty_alkaseltzer_coldflu" min="0"></td></tr>
-        <tr><td>Face Masks</td><td><input type="number" name="qty_face_masks" min="0"></td></tr>
-        <tr><td>Condoms</td><td><input type="number" name="qty_condoms" min="0"></td></tr>
-        <tr><td>Electrolyte Packs</td><td><input type="number" name="qty_electrolyte_packs" min="0"></td></tr>
-        <tr><td>Fentanyl Test Strips</td><td><input type="number" name="qty__fentanyl_test_strips" min="0"></td></tr>
-        <tr><td>Narcan</td><td><input type="number" name="qty_narcan" min="0"></td></tr>
+          <colgroup>
+            <col class="col-item">
+            <col class="col-qty">
+          </colgroup>
+          <tr><th>Medical Supplies </th><th>How Many?</th></tr>
+          <tr><td>Tylenol</td><td><input type="number" name="qty_tylenol" min="0"></td></tr>
+          <tr><td>Advil</td><td><input type="number" name="qty_advil" min="0"></td></tr>
+          <tr><td>Alcohol Wipes</td><td><input type="number" name="qty_alcohol_wipes" min="0"></td></tr>
+          <tr><td>Bandaids</td><td><input type="number" name="qty_bandaids" min="0"></td></tr>
+          <tr><td>Eye Drops</td><td><input type="number" name="qty_eye_drops" min="0"></td></tr>
+          <tr><td>Alka-Seltzer Cold/Flu</td><td><input type="number" name="qty_alkaseltzer_coldflu" min="0"></td></tr>
+          <tr><td>Face Masks</td><td><input type="number" name="qty_face_masks" min="0"></td></tr>
+          <tr><td>Condoms</td><td><input type="number" name="qty_condoms" min="0"></td></tr>
+          <tr><td>Electrolyte Packs</td><td><input type="number" name="qty_electrolyte_packs" min="0"></td></tr>
+          <tr><td>Fentanyl Test Strips</td><td><input type="number" name="qty__fentanyl_test_strips" min="0"></td></tr>
+          <tr><td>Narcan</td><td><input type="number" name="qty_narcan" min="0"></td></tr>
       </table>
-
       <table class="two-col">
-        <colgroup>
-          <col class="col-item">
-          <col class="col-qty">
-        </colgroup>
-        <tr><th>Menstrual Supplies</th><th>How Many?</th></tr>
-        <tr><td>Menstrual Pads</td><td><input type="number" name="qty_pads" min="0"></td></tr>
-        <tr><td>Tampons</td><td><input type="number" name="qty_tampons" min="0"></td></tr>
-        <tr><td>Menstrual Liners</td><td><input type="number" name="qty_liners" min="0"></td></tr>
-        <tr><td>Pregnancy Test</td><td><input type="number" name="qty_pregnancy_test" min="0"></td></tr>
+          <colgroup>
+            <col class="col-item">
+            <col class="col-qty">
+          </colgroup>
+          <tr><th>Menstrual Supplies</th><th>How Many?</th></tr>
+          <tr><td>Menstrual Pads</td><td><input type="number" name="qty_pads" min="0"></td></tr>
+          <tr><td>Tampons</td><td><input type="number" name="qty_tampons" min="0"></td></tr>
+          <tr><td>Menstrual Liners</td><td><input type="number" name="qty_liners" min="0"></td></tr>
+          <tr><td>Pregnancy Test</td><td><input type="number" name="qty_pregnancy_test" min="0"></td></tr>
       </table>
-
       <table class="two-col">
-        <colgroup>
-          <col class="col-item">
-          <col class="col-qty">
-        </colgroup>
-        <tr><th>Miscellaneous Supplies</th><th>How Many?</th></tr>
-        <tr><td>Gallon Zip Lock Bag</td><td><input type="number" name="qty_gallon_zip_lock_bag" min="0"></td></tr>
-        <tr><td>Small Zipper Bags</td><td><input type="number" name="qty_small_zipper_bag" min="0"></td></tr>
-        <tr><td>Playing Cards</td><td><input type="number" name="qty_playing_cards" min="0"></td></tr>
-        <tr><td>Sunglasses</td><td><input type="number" name="qty_sunglasses" min="0"></td></tr>
-        <tr><td>Lighters</td><td><input type="number" name="qty_lighters" min="0"></td></tr>
-        <tr><td>Bus Passes</td><td><input type="number" name="qty_bus_passes" min="0"></td></tr>
-        <tr><td>Poncho</td><td><input type="number" name="qty_ponchos" min="0"></td></tr>
-        <tr><td>Notebooks</td><td><input type="number" name="qty_notebook" min="0"></td></tr>
-        <tr><td>Pens/Pencils</td><td><input type="number" name="qty_pen_pencil" min="0"></td></tr>
-        <tr><td>Hair Ties</td><td><input type="number" name="qty_hair_tie" min="0"></td></tr>
-        <tr><td>Socks</td><td><input type="number" name="qty_socks" min="0"></td></tr>
+          <colgroup>
+            <col class="col-item">
+            <col class="col-qty">
+          </colgroup>
+          <tr><th>Miscellaneous Supplies</th><th>How Many?</th></tr>
+          <tr><td>Gallon Zip Lock Bag</td><td><input type="number" name="qty_gallon_zip_lock_bag" min="0"></td></tr>
+          <tr><td>Small Zipper Bags</td><td><input type="number" name="qty_small_zipper_bag" min="0"></td></tr>
+          <tr><td>Playing Cards</td><td><input type="number" name="qty_playing_cards" min="0"></td></tr>
+          <tr><td>Sunglasses</td><td><input type="number" name="qty_sunglasses" min="0"></td></tr>
+          <tr><td>Lighters</td><td><input type="number" name="qty_lighters" min="0"></td></tr>
+          <tr><td>Bus Passes</td><td><input type="number" name="qty_bus_passes" min="0"></td></tr>
+          <tr><td>Poncho</td><td><input type="number" name="qty_ponchos" min="0"></td></tr>
+          <tr><td>Notebooks</td><td><input type="number" name="qty_notebook" min="0"></td></tr>
+          <tr><td>Pens/Pencils</td><td><input type="number" name="qty_pen_pencil" min="0"></td></tr>
+          <tr><td>Hair Ties</td><td><input type="number" name="qty_hair_tie" min="0"></td></tr>
+          <tr><td>Socks</td><td><input type="number" name="qty_socks" min="0"></td></tr>
       </table>
-
       <table class="two-col">
-        <colgroup>
-          <col class="col-item">
-          <col class="col-qty">
-        </colgroup>
-        <tr><th>Food Items</th><th>How Many?</th></tr>
-        <tr><td>Snack</td><td><input type="number" name="qty_snack" min="0"></td></tr>
-        <tr><td>Water Bottles</td><td><input type="number" name="qty_water" min="0"></td></tr>
+          <colgroup>
+            <col class="col-item">
+            <col class="col-qty">
+          </colgroup>
+          <tr><th>Food Items</th><th>How Many?</th></tr>
+          <tr><td>Snack</td><td><input type="number" name="qty_snack" min="0"></td></tr>
+          <tr><td>Water Bottles</td><td><input type="number" name="qty_water" min="0"></td></tr>
+      </table>
+      <table class="two-col">
+          <colgroup>
+            <col class="col-item">
+            <col class="col-qty">
+          </colgroup>
+          <tr><th>Other Items</th><th>How Many?</th></tr>
+          <tr><td><input type="text"></td><td><input type="number" name="qty_snack" min="0"></td></tr>
       </table>
     </section>
 
-    <button type="Submit">Submit</button>
+    <button type="submit">Submit</button>
   </form> 
 
-  <h3>Submitted Data:</h3>
+  <h3 class="align-w-table">Submitted Data:</h3>
   <div id="output"></div>
 
-  <script>
+<script>
   const WEB_APP_URL = "PASTE_YOUR_WEB_APP_URL_HERE"; // e.g. https://script.google.com/macros/s/AKfycb.../exec
 
   document.getElementById('pledge-form').addEventListener('submit', async function (e) {
@@ -179,6 +214,5 @@
     }
   });
 </script>
-
 </body>
 </html>

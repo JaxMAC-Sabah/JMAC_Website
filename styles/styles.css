@@ -80,7 +80,6 @@ table th{
   font-weight:700
 }
 
-
 table tr:nth-child(even) td{ background:#f3f0f0}
 table caption{ text-align:left; padding:.5rem 0; color:var(--muted)}
 
