@@ -6,60 +6,37 @@
   <title>Supply Pledge Form</title>
   <link rel="stylesheet" href="styles/styles.css">
   <style>
-    section {
-      margin-bottom: 3em;
-    }
-    .align-w-table{
-      width: min(100%, 600px);  
-      margin: 0 auto;           
-      padding: 0.5rem;      
-    }
-    .align-w-table input[type="text"] {
-      width: 100%;
-      max-width: 240px;  
-      display: inline-block;
-      margin-bottom: 1rem;
-      padding: 0.5rem;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-    }
-    button {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: min(100%, 600px);   
-      padding: 0.5rem 1rem;
-      background: var(--brand-red);
-      color: #fff;
-      border-radius: 10px; 
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    #output {
-      white-space: pre-wrap;
-      background: #f9f9f9;
-      padding: 1em;
-      border: 1px solid #ccc;
-    }
+    .pledge section{ margin-bottom: 3em; }   
+
+    /* Keep tables within the narrow width, centered (page-specific) */
+    .pledge .table--narrow{ max-width:600px; margin-inline:auto; }
+
+    /* Set the qty column width only for this page */
+    .pledge .table--two-col .col-qty{ width: 10rem; }
+
+    /* Optional: tweak input width used in this form (name/email) */
+    .pledge input[type="text"]{ max-width: 240px; }
+
   </style>
 </head>
-<body>
-  <div class="align-w-table">
+
+<body class="pledge">
+  <div class="container container--narrow">
     <h1>What Are You Bringing?</h1>
     <p>This form serves as a way to inform JMAC of the items you intend to bring to the hygiene kit assembly event at {location} at {time}. Items may also be dropped off at {} before the event. We will send a remind email {} days prior with a reminder of the event and the items you indicated you would bring.   </p>
   </div>
-  <form id="pledge-form">
-    <section class="align-w-table">
+  <form id="pledge-form" class="container container--narrow">
+    <section>
       <h3>Contact Information</h3>
         <label for="fname">Name:</label>
-        <input type="text" name="fname">
+        <input type="text" name="name">
         <label for="email">Email:</label>
-        <input type="text" name="email"><br>
+        <input type="text" name="email" required>
     </section>
-    <section class="align-w-table">
+
+    <section>
       <h3>What are you bringing?</h3>
-      <table class="two-col">
+      <table class="table table--narrow table--two-col">
         <colgroup>
           <col class="col-item">
           <col class="col-qty">
@@ -74,13 +51,13 @@
         <tr><td>Hand Sanitizer</td><td><input type="number" name="qty_hand_sanitizer" min="0"></td></tr>
         <tr><td>Nail Clippers</td><td><input type="number" name="qty_nail_clippers" min="0"></td></tr>
         <tr><td>Nail File</td><td><input type="number" name="qty_nail_files" min="0"></td></tr>
-        <tr><td>Shaving Kit</td></td><td><input type="number" name="qty_shaving_kit" min="0"></td></tr>
+        <tr><td>Shaving Kit</td><td><input type="number" name="qty_shaving_kit" min="0"></td></tr>
         <tr><td>Combs</td><td><input type="number" name="qty_combs" min="0"></td></tr>
         <tr><td>Q-tip Container</td><td><input type="number" name="qty_qtip_container" min="0"></td></tr>
         <tr><td>Q-tips</td><td><input type="number" name="qty_qtips" min="0"></td></tr>
         <tr><td>Wipes</td><td><input type="number" name="qty_wipes" min="0"></td></tr>
       </table>
-      <table class="two-col">
+      <table class="table table--narrow table--two-col">
           <colgroup>
             <col class="col-item">
             <col class="col-qty">
@@ -95,10 +72,10 @@
           <tr><td>Face Masks</td><td><input type="number" name="qty_face_masks" min="0"></td></tr>
           <tr><td>Condoms</td><td><input type="number" name="qty_condoms" min="0"></td></tr>
           <tr><td>Electrolyte Packs</td><td><input type="number" name="qty_electrolyte_packs" min="0"></td></tr>
-          <tr><td>Fentanyl Test Strips</td><td><input type="number" name="qty__fentanyl_test_strips" min="0"></td></tr>
+          <tr><td>Fentanyl Test Strips</td><td><input type="number" name="qty_fentanyl_test_strips" min="0"></td></tr>
           <tr><td>Narcan</td><td><input type="number" name="qty_narcan" min="0"></td></tr>
       </table>
-      <table class="two-col">
+      <table class="table table--narrow table--two-col">
           <colgroup>
             <col class="col-item">
             <col class="col-qty">
@@ -109,7 +86,7 @@
           <tr><td>Menstrual Liners</td><td><input type="number" name="qty_liners" min="0"></td></tr>
           <tr><td>Pregnancy Test</td><td><input type="number" name="qty_pregnancy_test" min="0"></td></tr>
       </table>
-      <table class="two-col">
+      <table class="table table--narrow table--two-col">
           <colgroup>
             <col class="col-item">
             <col class="col-qty">
@@ -127,7 +104,7 @@
           <tr><td>Hair Ties</td><td><input type="number" name="qty_hair_tie" min="0"></td></tr>
           <tr><td>Socks</td><td><input type="number" name="qty_socks" min="0"></td></tr>
       </table>
-      <table class="two-col">
+      <table class="table table--narrow table--two-col">
           <colgroup>
             <col class="col-item">
             <col class="col-qty">
@@ -136,83 +113,81 @@
           <tr><td>Snack</td><td><input type="number" name="qty_snack" min="0"></td></tr>
           <tr><td>Water Bottles</td><td><input type="number" name="qty_water" min="0"></td></tr>
       </table>
-      <table class="two-col">
+      <table class="table table--narrow table--two-col">
           <colgroup>
             <col class="col-item">
             <col class="col-qty">
           </colgroup>
           <tr><th>Other Items</th><th>How Many?</th></tr>
-          <tr><td><input type="text"></td><td><input type="number" name="qty_snack" min="0"></td></tr>
+          <tr><td><input type="text" name="other" placeholder="Item name or description"></td><td><input type="number" name="qty_other" min="0"></td></tr>
       </table>
     </section>
 
-    <button type="submit">Submit</button>
+    <div class="container container--narrow">
+      <button type="submit" class="button">Submit</button>
+    </div>
   </form> 
 
-  <h3 class="align-w-table">Submitted Data:</h3>
-  <div id="output"></div>
+  <div class="container container--narrow">
+    <h3>Submitted Data:</h3>
+    <div id="output" style="white-space:pre-wrap; background:#f9f9f9; padding:1em; border:1px solid #ccc;"></div>
+  </div>
 
 <script>
-  const WEB_APP_URL = "PASTE_YOUR_WEB_APP_URL_HERE"; // e.g. https://script.google.com/macros/s/AKfycb.../exec
+  // We're sending the data from this form to the below web app url location
+  const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzx4U67GpDFN5NOkd3NtE0hTajBbNvlHZOMfmkK5HcBYaO2sF3YuXcFybiT4ARWVHxxLg/exec';
+  
+  const form   = document.getElementById('pledge-form');
+  const output = document.getElementById('output');
 
-  document.getElementById('pledge-form').addEventListener('submit', async function (e) {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const form = e.target;
 
-    // 1) Collect items the same way you already do
-    const names = [
-      'toothbrushes','shampoo',
-      'bandages','wipes',
-      'pads','tampons',
-      'blankets','trashbags',
-      'granola','water'
-    ];
+    // Turn the form into an object: { name: value, ... }
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
 
-    const items = {};
-    names.forEach(n => {
-      const checked = form[n]?.checked;
-      const qty = parseInt(form[`qty_${n}`]?.value, 10);
-      if (checked && !isNaN(qty) && qty > 0) items[n] = qty;
+    // Normalize qty_ fields: ensure numbers, empty -> 0
+    Object.keys(data).forEach(k => {
+      if (k.startsWith('qty_')) {
+        const n = Number(data[k]);
+        data[k] = Number.isFinite(n) ? n : 0;
+      }
     });
 
-    // Optional donor info fields (add inputs with these names if you want)
-    const name = form['donor_name']?.value?.trim() || "";
-    const email = form['donor_email']?.value?.trim() || "";
-    const section = ""; // or set per section if you submit one table at a time
-
-    // 2) Basic guard
-    if (Object.keys(items).length === 0) {
-      alert("Please select at least one item and enter a quantity > 0.");
+    // Optional client-side validation (add more as needed)
+    if (!data.email) {
+      output.textContent = 'Please enter your email.';
       return;
     }
 
-    // 3) Send to Apps Script
-    const submitBtn = form.querySelector('button[type="submit"]');
-    submitBtn.disabled = true;
-    submitBtn.textContent = "Submitting…";
+    // Add a client-side timestamp as ISO string (server also stamps Date)
+    data.client_timestamp = new Date().toISOString();
 
+    // Submit using a "simple request" to avoid CORS preflight.
     try {
-      const res = await fetch(WEB_APP_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ items, name, email, section })
+      // Disable button while submitting
+      const submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+
+      await fetch(WEB_APP_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify(data)
       });
-      const json = await res.json().catch(() => ({}));
-      // Preview + success UI
-      document.getElementById('output').textContent = JSON.stringify(json, null, 2);
-      if (json.ok) {
-        alert("Thanks! Your pledge was recorded.");
-        form.reset();
-      } else {
-        alert("Submission error: " + (json.error || "Unknown error"));
-      }
+
+      output.textContent = 'Thanks! Your pledge was recorded.';
+      form.reset();
     } catch (err) {
-      alert("Network error submitting form. Please try again.");
+      console.error(err);
+      output.textContent = 'Sorry, something went wrong submitting your pledge.';
     } finally {
+      const submitBtn = form.querySelector('button[type="submit"]');
       submitBtn.disabled = false;
-      submitBtn.textContent = "Submit";
     }
   });
 </script>
 </body>
+
 </html>

@@ -10,12 +10,12 @@
   --focus:#2563eb;
 }
 
-/* ====== Base ====== */
+/* ========== Base ========== */
 /* These styles will be applied to everything by virtue of *{} which means select every element on the page and apply the following styles */
 *{box-sizing:border-box} /* element's width and height will include its padding and border, shrinking the content area to fit within those dimensions, rather than adding to the total size. */
 html{scroll-behavior:smooth}
 body{
-  margin:0; color:var(--ink); background:var(--bg); /*vars are referring to things inside the root{} at the begining of the document */
+  margin:0; color:var(--ink); background:var(--bg); /*vars (ie variables) are referring to things inside the root{} at the begining of the document */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
   line-height:1.55;
 }
@@ -30,7 +30,9 @@ a:hover{text-decoration:underline}
   padding: 1.25rem;
 }
 
-/* Header bar (optional, matches your index look) */
+.container--narrow{ max-width:600px; padding-inline:0; }
+
+/* Header bar */
 .site-header{
   background:#000; color:#fff; text-align:center; padding:1rem;
 }
@@ -62,8 +64,8 @@ h3{ font-size:1.1rem; color:var(--muted); text-transform:uppercase; letter-spaci
 
 /********************************* Tables **********************************/
 /* th - table header, td - table data, tr - table rows  */
-table{
-  width: min(100%, 600px); 
+.table{
+  width: 100%; 
   margin: 0 auto; 
   border-collapse:collapse; 
   background:#fff; 
@@ -71,34 +73,30 @@ table{
   border-radius:10px; 
   overflow:hidden;
 }
-table th{ 
-  padding: 0.25% 10% 0.25% 10%;
+.table th{  /* th = table header*/
+  padding: 0.75rem 1rem;
   border-bottom:1px solid var(--border); 
   vertical-align: middle;
   background:var(--brand-red); 
   color:#fff; 
-  font-weight:700
-}
-
-table tr:nth-child(even) td{ background:#f3f0f0}
-table caption{ text-align:left; padding:.5rem 0; color:var(--muted)}
-
-.two-col{
-  table-layout: fixed;           /* prevents content from changing column widths */
-  width: min(100%, 600px);       
-}
-
-.two-col tr td:first-child, .two-col th:first-child { 
+  font-weight:700;
   text-align: left;
-  vertical-align: middle;   
-  padding: 0.25% 0 0.25% 17%;
 }
-.two-col tr td:nth-child(2), .two-col th:nth-child(2){ 
-  text-align: center;
-  vertical-align: middle;   
-  padding: 0.25%; 
+
+.table td{ /* td - table data */
+  vertical-align: middle;
+  padding:.5rem 1rem;
 }
-.two-col td { word-wrap: break-word; } 
+
+.table tbody tr:nth-child(even) td{ background:#f3f0f0}
+.table caption{ text-align:left; padding:.5rem 0; color:var(--muted)}
+
+/* Two-column tables (modifier) */
+.table--two-col :is(th,td):nth-child(1){ text-align:left; }
+.table--two-col :is(th,td):nth-child(2){ text-align:center; }
+
+/* Let colgroup manage widths; keep text from overflowing */
+.table--two-col td { word-wrap: break-word; }
 
 /* Form controls */
 input[type="number"], input[type="text"], input[type="email"]{
@@ -129,7 +127,6 @@ input[type="number"]:focus, input[type="text"]:focus, input[type="email"]:focus{
 /* Section spacing */
 .section{ margin-top:2rem }
 .section h2{ margin-top:0 }
-
 
 /* Responsive layout */
 @media (max-width: 720px){
