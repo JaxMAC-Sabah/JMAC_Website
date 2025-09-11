@@ -12,7 +12,9 @@
 /* ========== Base ========== */
 /* These styles will be applied to everything by virtue of *{} which means select every element on the page and apply the following styles */
 *{box-sizing:border-box} /* element's width and height will include its padding and border, shrinking the content area to fit within those dimensions, rather than adding to the total size. */
+
 html{scroll-behavior:smooth}
+
 body{
   margin:0; color:var(--ink); background:var(--bg); /*vars (ie variables) are referring to things inside the root{} at the begining of the document */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
@@ -20,6 +22,7 @@ body{
 }
 
 a{color:var(--brand-red); text-decoration:none}
+
 a:hover{text-decoration:underline}
 
 /* Container */
@@ -35,8 +38,8 @@ a:hover{text-decoration:underline}
 .site-header{
   background:#000; color:#fff; text-align:center; padding:1rem;
 }
-.site-header .logo{ width:140px; height:auto; display:block; margin:0 auto 8px;}
-.site-header h1{ margin:0; font-size:1.5rem; font-weight:700; letter-spacing:.2px;}
+
+.site-header h1{ font-size:1.5rem; font-weight:700; letter-spacing:.2px;}
 
 /* Headings */
 h1,h2,h3{ line-height:1.2; margin:.2em 0 .4em}
