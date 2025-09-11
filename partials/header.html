@@ -8,6 +8,8 @@
       /* setting up a grid system that places all items in a grid within the header */
       .site-header{
         display:grid;
+        background: #000;
+        color: #fff;
         grid-template-columns: auto 1fr;    /* left: logo, right: content */
         grid-template-rows: auto auto;      /* row 1: title, row 2: nav */
         grid-template-areas: 
@@ -27,22 +29,43 @@
         grid-area: title; 
         text-align: center;
         margin-bottom: 0;
-        margin-top: 0.5em;
+        margin-top: 0.2em;
+        color: inherit;
        }
-      .navbar { grid-area: nav; }
+      .navbar { 
+        grid-area: nav;
+        background: transparent; 
+        border: 0;
+      }
       
       /* adjusting logo sizing */
       .logo{ 
         height: clamp(60px, 80vw, 120px); 
         width: auto;
-
       }
       .nav-list{
         display: flex;
         justify-content: center;
-        align-items: start;
         gap: 1rem;
         list-style: none;
+        margin-bottom: 0;
+      }
+      /* submenu toggle styling*/
+      .submenu-toggle{
+        background: none;
+        border: none;
+        padding: 0.25rem 0.5rem;   /* keep a decent click target */
+        font: inherit;
+        color: inherit;
+        cursor: pointer;
+      }
+      .submenu-toggle:hover{
+         color: #bdbdbd;
+      }
+      .nav-links a:focus-visible,
+      .submenu-toggle:focus-visible{
+        outline: 2px solid #fff;
+        outline-offset: 2px;
       }
       /* submenu stays hidden until JS toggles it) */
       .submenu[hidden]{ display: none; }
