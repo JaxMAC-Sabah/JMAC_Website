@@ -1,36 +1,59 @@
+
+
+function initProjectsDropdown(){
+  //locate where is button and menu are, and wrapper in which they exist 
+  const btn = document.querySelector('.submenu-toggle');
+  const menu = document.querySelector('.submenu');
+  const wrapper = document.querySelector('.has-submenu');
+  if (!btn || !menu || !wrapper) return; //bail if any part is missing
+
+  function openMenu(){
+    wrapper.classList.add('open'); //useful for providing class hook for styling etc 
+    btn.setAttribute('aria-expanded', 'true');
+    menu.hidden = false;
+  }
+  function closeMenu(){
+    wrapper.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    menu.hidden = true;
+  }
+  function toggleMenu(){
+    isOpen = btn.getAttribute('aria-expanded') === 'true';
+    isOpen ? closeMenu() : openMenu();
+}
+  btn.addEventListener('click', function (event) {
+    event.stopPropagation(); // don’t let doc click close it immediately
+    toggleMenu();
+  });
+  document.addEventListener('click', function (event) {
+    // If click is outside the wrapper, close
+    if (!wrapper.contains(event.target)) closeMenu();
+  });
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') closeMenu();
+  });
+}
 async function loadPartial(targetId, url) {
-  const el = document.getElementById(targetId);
-  if (!el) return;
-  const res = await fetch(url, { cache: 'no-cache' });
-  el.innerHTML = await res.text();
+  const insertionLocation = document.getElementById(targetId);
+  if (!insertionLocation) return; // no find location do nothing
 
-  // If this is the header, wire up the dropdown
-  if (url.includes('header.html')) initHeaderDropdown(el);
-}
+  try {
+    // Get the HTML file over the network
+    const response = await fetch(url);
+    const html = await response.text();
 
-function initHeaderDropdown(scope=document) {
-  const btn = scope.querySelector('.dropbtn');
-  const menu = scope.querySelector('.dropdown-menu');
-  if (!btn || !menu) return;
+    // Insert it into the page
+    insertionLocation.innerHTML = html;
 
-  btn.addEventListener('click', (e) => {
-    const isOpen = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', !isOpen);
-    scope.querySelector('.dropdown').classList.toggle('open', !isOpen);
-    e.stopPropagation();
-  });
-
-  document.addEventListener('click', (e) => {
-    if (scope.querySelector('.dropdown').classList.contains('open') &&
-        !btn.contains(e.target) &&
-        !menu.contains(e.target)) {
-      scope.querySelector('.dropdown').classList.remove('open');
-      btn.setAttribute('aria-expanded','false');
+    // If this was the header, wire up its dropdown now that elements exist
+    if (url.includes('header.html')) {
+      initProjectsDropdown(insertionLocation);
     }
-  });
+  } catch (error) {
+    console.error('Failed to load partial:', url, error);
+  }
 }
-
+// Run after the DOM exists
 document.addEventListener('DOMContentLoaded', () => {
   loadPartial('site-header', '/partials/header.html');
-  loadPartial('site-footer', '/partials/footer.html'); // if you add a footer later
 });
