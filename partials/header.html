@@ -5,21 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header</title>
     <style>
-      .site-header .nav-links a, 
-      .site-header .nav-links a:link,
-      .site-header .nav-links a:visited,
-      .site-header .nav-links a:active,
-      .site-header .submenu-toggle{
-        color:#fff;
-        text-decoration: none;
-      }
-      .site-header .navbar .nav-links li > a { color: #fff; }
-      .site-header .navbar .nav-links li > a:visited { color: #fff; }
-      .site-header {
+      .site-header,
+      .site-header a{
         display:flex;
         background: #000;
         color: #fff;  
-        padding:0.5rem;   
+        text-decoration: none;
+        align-items:flex-start;         /* <-- key: vertical align */
+        padding:0.15rem;   
+
       }
       /* adjusting logo sizing */
       .logo{ 
@@ -45,7 +39,7 @@
       .submenu-toggle:hover{
          color: #bdbdbd;
       }
-      .nav-links a:focus-visible,
+      .nav-list a:focus-visible,
       .submenu-toggle:focus-visible{
         outline: 2px solid #fff;
         outline-offset: 2px;
