@@ -23,7 +23,7 @@
         /* might want to use clamp for reponsive design */
         width: auto;
       }
-      /* Nav list vissible (not dropdown) */
+      /* Nav list visible (not dropdown) */
       .navbar{
         display:flex;
       }
@@ -32,7 +32,6 @@
         justify-content: center;
         gap: 1rem;
         list-style: none;
-        margin-bottom: 0;
         padding-bottom: 0;
       }
       /* submenu toggle styling*/
@@ -66,18 +65,15 @@
     <nav class="navbar" aria-label="Primary">
       <ul class="nav-list">
         <li><a href="/index.html">Home</a></li>
+        <li><a href="/index.html">Away</a></li>
 
-        <li class="has-submenu">
-          <button 
-            class="submenu-toggle" 
+        <li class="submenu-toggle" 
             type="button" 
             aria-expanded="false"
             aria-controls="projects-submenu"
             aria-haspopup="true"
             id="projects-toggle"
-            >Projects ▾
-          </button>
-
+            ><a href="#">Projects ▾</a>
           <ul 
             class="submenu" 
             id="projects-submenu" 
