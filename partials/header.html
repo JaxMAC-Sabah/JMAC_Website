@@ -5,49 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header</title>
     <style>
-      /* setting up a grid system that places all items in a grid within the header */
-      .site-header{
-        display:grid;
+      .site-header .nav-links a, 
+      .site-header .nav-links a:link,
+      .site-header .nav-links a:visited,
+      .site-header .nav-links a:active,
+      .site-header .submenu-toggle{
+        color:#fff;
+        text-decoration: none;
+      }
+      .site-header .navbar .nav-links li > a { color: #fff; }
+      .site-header .navbar .nav-links li > a:visited { color: #fff; }
+      .site-header {
+        display:flex;
         background: #000;
-        color: #fff;
-        grid-template-columns: auto 1fr;    /* left: logo, right: content */
-        grid-template-rows: auto auto;      /* row 1: title, row 2: nav */
-        grid-template-areas: 
-        "logo title"
-        "logo nav";
-        column-gap: 1rem;
-        align-items: start;
-        align-content: start;
-        row-gap: 0.15rem;   
-        padding:1rem;   
+        color: #fff;  
+        padding:0.5rem;   
       }
-      /* Page Title fornt formatting */
-      .site-header h1{ 
-        font-size:2rem; 
-        font-weight:700; 
-        letter-spacing:.2px;
-      }
-      /* assigning grid areas */
-      .logo-link { 
-        grid-area: logo;
-        align-self: center;
-      }
-      .site-title { 
-        grid-area: title; 
-        text-align: center;
-        margin-bottom: 0;
-        margin-top: 0.2em;
-        color: inherit;
-       }
-      .navbar { 
-        grid-area: nav;
-        background: transparent; 
-        border: 0;
-      }
-      
       /* adjusting logo sizing */
       .logo{ 
-        height: clamp(60px, 80vw, 120px); 
+        height: 50px;
+        /* might want to use clamp for reponsive design */
         width: auto;
       }
       .nav-list{
