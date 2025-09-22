@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <style>
+        .nav-list {
+            background: #000;
+            box-shadow: 0px 0px 10px #717070;
+            margin: 0;
+            padding: 0.5rem 0;
+            display:flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .nav-item{
+            list-style: none;
+            margin-right: 2rem;
+        }
+        .nav-item a{
+            text-decoration: none;
+            color: #fff;
+        }
+        .nav-item a:hover{
+            color: red;
+            transition:all 200ms ease-in;
+        }
+        .nav-item:first-child{
+            margin-right: auto;
+            margin-left:1rem;
+        }
+        .logo{
+            height: 50px;
+            width:auto;
+        }
+    </style>
+</head>
+  <body>
+    <header>
+        <navbar>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#"><img class="logo" src="/assets/jmac_logo_color_square.png" alt="JMAC logo"> </a></li>
+                <li class="nav-item"><a href="#">Home</a></li>
+                <div class="dropdown">
+                    <button class="dropbtn">Projects</button>
+                        <div class="dropdown-content">
+                            <a href="#">Hygiene Kits</a>
+                            <!-- more projcts added here -->
+                        </div>
+            </ul>
+        </navbar>
+    </header>
+  </body>
+</html>
