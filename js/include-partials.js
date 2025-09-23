@@ -2,9 +2,9 @@
 
 function initProjectsDropdown(){
   //locate where is button and menu are, and wrapper in which they exist 
-  const btn = document.querySelector('.submenu-toggle');
-  const menu = document.querySelector('.submenu');
-  const wrapper = document.querySelector('.has-submenu');
+  const btn = document.querySelector('.dropbtn');
+  const menu = document.querySelector('.dropdown-content');
+  const wrapper = document.querySelector('.dropdown');
   if (!btn || !menu || !wrapper) return; //bail if any part is missing
 
   function openMenu(){
@@ -55,5 +55,5 @@ async function loadPartial(targetId, url) {
 }
 // Run after the DOM exists
 document.addEventListener('DOMContentLoaded', () => {
-  loadPartial('site-header', '/partials/header.html');
+  loadPartial('site-header', '/partials/header_test.html');
 });

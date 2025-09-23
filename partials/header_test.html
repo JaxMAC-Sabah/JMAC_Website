@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header</title>
     <style>
+        /* master nav css, change flex options here */
         .nav-list {
             background: #000;
             box-shadow: 0px 0px 10px #717070;
@@ -14,24 +15,36 @@
             justify-content: flex-end;
             align-items: center;
         }
+        /* nav items */
         .nav-item{
-            list-style: none;
+            /* removing bullet point styling */
+            list-style: none; 
             margin-right: 2rem;
         }
         .nav-item a{
+            /* removing underline styling */
             text-decoration: none;
             color: #fff;
         }
-        .nav-item a:hover{
+        /* projects drop down is a button which has different defaults, changing to look like other parts of nav */
+        .dropbtn{
+            background: none;
+            border: none;
+            color: #fff;
+        }
+        /* have change of color when hover over nav items */
+        .nav-item a:hover, 
+        .dropbtn:hover{
             color: red;
             transition:all 200ms ease-in;
         }
+        /* locate logo to right side and resize */
         .nav-item:first-child{
             margin-right: auto;
             margin-left:1rem;
         }
         .logo{
-            height: 50px;
+             height: 50px;
             width:auto;
         }
     </style>
@@ -40,11 +53,18 @@
     <header>
         <navbar>
             <ul class="nav-list">
-                <li class="nav-item"><a href="#"><img class="logo" src="/assets/jmac_logo_color_square.png" alt="JMAC logo"> </a></li>
+                <li class="nav-item"><a href="#"><img class="logo" src="/assets/jmac_logo_website.png" alt="JMAC logo"> </a></li>
                 <li class="nav-item"><a href="#">Home</a></li>
                 <div class="dropdown">
-                    <button class="dropbtn">Projects</button>
-                        <div class="dropdown-content">
+                    <button class="dropbtn"
+                            aria-expanded="false"
+                            aria-controls="projects-submenu"
+                            aria-haspopup="true"
+                            >Projects</button>
+                        <div class="dropdown-content"
+                             id="projects-submenu" 
+                             aria-labelledby="projects-submenu"
+                             hidden>
                             <a href="#">Hygiene Kits</a>
                             <!-- more projcts added here -->
                         </div>
