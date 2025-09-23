@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header</title>
+
+<head>
     <style>
         /* master nav css, change flex options here */
         .nav-list {
@@ -56,27 +52,31 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
             font-size: medium;
         }
+        .dropdown-content a:hover{
+            color: red;
+            transition:all 100ms ease-in;
+        }
     </style>
 </head>
-  <body>
-    <header>
-        <navbar>
-            <ul class="nav-list">
-                <li class="nav-item"><a href="#"><img class="logo" src="/assets/jmac_logo_website.png" alt="JMAC logo"> </a></li>
-                <li class="nav-item"><a href="#">Home</a></li>
-                <div class="dropdown">
-                    <button class="dropbtn"
-                            aria-expanded="false"
-                            aria-controls="projects-submenu"
-                            aria-haspopup="true"
-                            >Projects</button>
-                        <div class="dropdown-content"
-                             id="projects-submenu" 
-                             aria-labelledby="projects-submenu"
-                             hidden>
-                            <a href="#">Hygiene Kits</a>
-                            <!-- more projcts added here -->
-                        </div>
+
+
+<nav>
+    <ul class="nav-list">
+        <li class="nav-item"><a href="#"><img class="logo" src="/assets/jmac_logo_website.png" alt="JMAC logo"> </a></li>
+        <li class="nav-item"><a href="#">Home</a></li>
+        <li class="nav-item" class="dropdown">
+            <button class="dropbtn"
+                aria-expanded="false"
+                aria-controls="projects-submenu"
+                aria-haspopup="true"
+                >Projects</button>
+            <div class="dropdown-content"
+                 id="projects-submenu" 
+                 aria-labelledby="projects-submenu"
+                 hidden>
+                <a href="#">Hygiene Kits</a>
+                <!-- more projcts added here -->
+                </li>
             </ul>
         </navbar>
     </header>

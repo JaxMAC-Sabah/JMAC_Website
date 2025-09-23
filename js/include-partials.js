@@ -1,6 +1,6 @@
 
 
-function initProjectsDropdown(){
+function initProjectsDropdown(scope=document){
   //locate where is button and menu are, and wrapper in which they exist 
   const btn = document.querySelector('.dropbtn');
   const menu = document.querySelector('.dropdown-content');
@@ -18,7 +18,7 @@ function initProjectsDropdown(){
     menu.hidden = true;
   }
   function toggleMenu(){
-    isOpen = btn.getAttribute('aria-expanded') === 'true';
+    const isOpen = btn.getAttribute('aria-expanded') === 'true';
     isOpen ? closeMenu() : openMenu();
 }
   btn.addEventListener('click', function (event) {
