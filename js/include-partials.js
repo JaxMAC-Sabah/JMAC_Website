@@ -46,7 +46,7 @@ async function loadPartial(targetId, url) {
     insertionLocation.innerHTML = html;
 
     // If this was the header, wire up its dropdown now that elements exist
-    if (url.includes('header.html')) {
+    if (url.includes('header_test.html')) {
       initProjectsDropdown(insertionLocation);
     }
   } catch (error) {
