@@ -1,5 +1,3 @@
-
-
 function initProjectsDropdown(scope=document){
   //locate where is button and menu are, and wrapper in which they exist 
   const btn = document.querySelector('.dropbtn');
