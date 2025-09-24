@@ -31,6 +31,14 @@ function initProjectsDropdown(scope=document){
     if (event.key === 'Escape') closeMenu();
   });
 }
+
+
+
+
+
+
+
+
 async function loadPartial(targetId, url) {
   const insertionLocation = document.getElementById(targetId);
   if (!insertionLocation) return; // no find location do nothing

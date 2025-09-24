@@ -9,7 +9,6 @@
         display:flex;
         justify-content: flex-end;
         align-items: center;
-        /* overflow:hidden; */
     }
     /* nav items */
     .site-header .nav-item a,
@@ -52,13 +51,12 @@
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
         font-size: medium;
     }
-    .site-header .dropdown-content a:hover{ /* Change color of dropdown links on hover */
-        color: red;
+    .site-header .dropdown-content a:hover{ /* Change color of dropdown bg on hover */
+        background-color: rgb(242, 234, 234);
         transition:all 100ms ease-in;
     }   
     .site-header .dropdown-content{
         padding:0.5rem;
-        display: none;
         position: absolute;
         z-index: 1;
     } 
@@ -80,12 +78,13 @@
                 >Projects</button>
             <ul class="dropdown-content"
                  id="projects-submenu" 
-                 aria-labelledby="projects-submenu"
+                 aria-labelledby="projects-toggle"
                  hidden>
                 <li><a href="#">Hygiene Kits</a></li>
                 <li><a href="#">project2</a></li>
                 <li><a href="#">project3</a></li>
                 <!-- more projcts added here -->
+            </ul>
         </li>
     </ul>
 </nav>
