@@ -7,10 +7,10 @@
         margin: 0;
         padding: 0.5rem 0;
         display:flex;
-        justify-content: flex-end;
+        justify-content: flex-start;
         align-items: center;
     }
-    /* nav items */
+    /* main nav items */
     .site-header .nav-item a,
     .site-header .dropbtn{
         color: #fff;
@@ -19,17 +19,16 @@
     }
     .site-header .nav-item{
         list-style: none; /* removing bullet point styling */
-        margin-right: 2rem;
+        margin-right: 3.5rem;
     }
     .site-header .nav-item a{
         text-decoration: none; /* removing underline styling for links */
     }
-    /* projects drop down is a button which has different defaults, changing to look like other parts of nav */
-    .site-header .dropbtn{
+    .site-header .dropbtn{ /* changing project dropdown button to look like other parts of nav */
         background: none;
         border: none;
     }
-    /* have change of color when hover over nav items */
+    /* Hovering over nav=> changes color */
     .site-header .nav-item a:hover, 
     .site-header .dropbtn:hover{
         color: red;
@@ -37,10 +36,11 @@
     }
     /* locate logo to right side and resize */
     .site-header .nav-item:first-child{
-        margin-right: auto;
+        /* margin-right: auto; */
         margin-left:1rem;
     }
-    .site-header .logo{
+    /* sizing the logo */
+    .site-header .logo{ 
         height: 50px;
         width:auto;
     }
@@ -50,26 +50,21 @@
         background: #000;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
         font-size: medium;
+        display: block;
+        padding: 0.5rem 1rem;
     }
-    .site-header .dropdown-content a:hover{ /* Change color of dropdown bg on hover */
-        background-color: rgb(242, 234, 234);
-        transition:all 100ms ease-in;
-    }   
     .site-header .dropdown-content{
-        padding:0.5rem;
-        position: absolute;
+        padding:0.25rem 0rem; 
+        position: absolute; /* ensures drop down drops down */
         z-index: 1;
+        list-style: none;
     } 
-    .site-header .dropdown{
-        position: relative;
-        display: inline-block;
-    }
 </style>
 
 <nav class="site-header" aria-label="Primary">
     <ul class="nav-list">
-        <li class="nav-item"><a href="#"><img class="logo" src="/assets/jmac_logo_website.png" alt="JMAC logo"> </a></li>
-        <li class="nav-item"><a href="#">Home</a></li>
+        <li class="nav-item"><a href="/index.html"><img class="logo" src="/assets/jmac_logo_website.png" alt="JMAC logo"> </a></li>
+        <li class="nav-item"><a href="/index.html">Home</a></li>
         <li class="nav-item dropdown">
             <button class="dropbtn"
                 aria-expanded="false"
@@ -80,9 +75,7 @@
                  id="projects-submenu" 
                  aria-labelledby="projects-toggle"
                  hidden>
-                <li><a href="#">Hygiene Kits</a></li>
-                <li><a href="#">project2</a></li>
-                <li><a href="#">project3</a></li>
+                <li><a href="/hygiene-kits.html">Hygiene Kits</a></li>
                 <!-- more projcts added here -->
             </ul>
         </li>

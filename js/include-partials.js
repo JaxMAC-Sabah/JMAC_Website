@@ -32,13 +32,6 @@ function initProjectsDropdown(scope=document){
   });
 }
 
-
-
-
-
-
-
-
 async function loadPartial(targetId, url) {
   const insertionLocation = document.getElementById(targetId);
   if (!insertionLocation) return; // no find location do nothing
