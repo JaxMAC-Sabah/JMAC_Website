@@ -16,3 +16,6 @@ __pycache__/
 
 # Ignore docx file
 *.docx
+
+# Ignore any excalidraw files 
+*.excalidraw
