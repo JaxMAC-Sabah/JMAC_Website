@@ -41,7 +41,7 @@ a:hover{text-decoration:underline}
 h1,h2,h3{ line-height:1.2; margin:.2em 0 .4em}
 h1{ font-size:2rem}
 h2{ font-size:1.4rem; border-bottom:2px solid var(--border); padding-bottom:.35rem; margin-top:1.5rem; padding-left: 1rem; padding-right: 1rem;}
-h3{ font-size:1.1rem; color:var(--muted); text-transform:uppercase; letter-spacing:.03em}
+h3{ font-size:1.1rem; color:var(--panel); text-transform:uppercase; letter-spacing:.03em}
 
 /* Headers */
 header {
