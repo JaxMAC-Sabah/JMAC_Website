@@ -7,14 +7,43 @@
   <title>Get Involved</title>
   <style>
     .intro-box {
-      background-color: #fce8e6;
-      border-left: 5px solid #f44336;
-      padding: 1.5em;
-      margin: 2em 0;
-      border-radius: 6px;
-      font-size: 1.1em;
-      line-height: 1.6em;
+        background-color: #fce8e6;
+        border-left: 5px solid #f44336;
+        padding: 1.5em;
+        margin: 2em 0;
+        border-radius: 6px;
+        font-size: 1.1em;
+        line-height: 1.6em;
     }
+    .drop-off-locations {
+        display: flex;
+        flex-wrap: wrap; /* allows wrapping on smaller screens */
+        justify-content: center; /* centers items horizontally */
+        gap: 1rem; /* space between boxes */
+        margin: 2rem 0;
+    }
+
+    .location-card {
+        flex: 1 1 220px; /* grow, shrink, and minimum width */
+        max-width: 300px; /* prevent overly wide cards */
+        border: 1.5px solid #ddd;
+        border-radius: 8px;
+        padding: 1rem;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .location-card p {
+        margin: 0.3rem 0;
+        line-height: 1.4;
+    }
+
+    .location-card strong {
+        font-size: 1.1rem;
+        color: #b71c1c; /* red accent or your brand color */
+    }
+
   </style>
 </head>
 
@@ -27,23 +56,22 @@
             <p>To meet the moment we must show up for one another in our community. JMAC is starting a weekly Meals in a Bag Initiative— a local, collective effort to pack shelf-stable ingredients and recipe cards into ready-to-cook meal kits. This is one among many mutual aid efforts to address the current crisis.</p>
         </div>
        
-        <h2>Ways to Contribute</h2>
+        <h2>Ways to Contribute: Bring non-perishable food items to:</h2>
 
-        <div>
-            <h3>Bring non-perishable food items to:</h3>
-            <div><p>Cafe Resistance</p>
+        <div class="drop-off-locations">
+            <div class="location-card"><p><strong>Cafe Resistance</strong></p>
                 <p>5007 Soutel DrJacksonville, Florida 32208</p>
                 <p>Mon-Fri 10am-7pm; Sat 10am-5pm</p>
             </div>
-            <div><p>Eartha's Farm</p>
+            <div class="location-card"><p><strong>Eartha's Farm</strong></p>
                 <p>4850 Moncrief Rd. Jacksonville FL. 32209</p>
                 <p>Wednesday, Friday, Saturday 8:30am - 2:00pm - unconfirmed</p>
             </div>
-            <div><p>City Council Food Shares</p>
+            <div class="location-card"><p><strong>Council Food Shares</strong></p>
                 <p>James Weldon Johnson Park - 500 W. Monroe St Jacksonville FL 32204</p>
                 <p>Tuesday 11/11 and 11/25 between 5:30-7pm</p>
             </div>
-            <div><p>Black Cat Comics</p>
+            <div class="location-card"><p><strong>Cat Comics</strong></p>
                 <p>881 Stockton St. Jacksonville, FL 32204</p>
                 <p>put hours here</p>
             </div>
