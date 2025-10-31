@@ -23,7 +23,7 @@
         font-size: 1.1em;
         line-height: 1.6em;
     }
-    .drop-off-locations {
+    .pantries-container, .food-share-container, .other-resources-container {
         display: flex;
         flex-wrap: wrap; /* allows wrapping on smaller screens */
         justify-content: center; /* centers items horizontally */
@@ -31,7 +31,7 @@
         margin: 1rem 0;
     }
 
-    .drop-off-card {
+    .pantries-card, .food-share-card, .other-resources-card {
         flex: 1 1 220px; /* grow, shrink, and minimum width */
         max-width: 300px; /* prevent overly wide cards */
         border: 1.5px solid #ddd;
@@ -41,50 +41,7 @@
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .drop-off-card p {
-        margin: 0.3rem 0;
-        line-height: 1.4;
-    }
-    .drop-off-card strong {
-        font-size: 1.1rem;
-        color: #b71c1c; /* red accent or your brand color */
-    }
-    .event-box {
-        background-color: #f44336;
-        color: white;
-        padding: 1em;
-        border-radius: 6px;
-        margin: 1em 0;
-        font-size: 1.2rem;
-        width: 75%;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .stores{
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-around;
-        gap: 0.25rem; 
-    }
-    .store-card{
-        flex: 0 1 180px;
-        border: 1.5px solid #ddd;
-        border-radius: 5px;
-        padding:0.7rem;
-        margin: 0.75rem;
-        background-color: #fff;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .donations{
-        text-align: center;
-    }
-    .donations-ul{
-        display: inline-block;
-        text-align: left;
-    }
-
+   
   </style>
 </head>
 
@@ -93,19 +50,21 @@
     <header><h1>Resources</h1></header>
 
     <div class="intro-box">
-        <p>It has been ruled on Oct 31st, one day before the USDA is set to freeze SNAP payments that the administration must keep funding SNAP during the government shutdown. <a href="https://www.myflfamilies.com/supplemental-nutrition-assistance-program-snap-notification">Florida's Department of Children and Families</a> has informed recipients that November benefits would be delayed until federal funding resumes and will post updates as the situation changes. It isn't yet clear how fast EBT cards can be reloaded after the rulings—often this takes 1-2 weeks. Continue following the <a href="https://www.myflfamilies.com/supplemental-nutrition-assistance-program-snap-notification">Department of Children and Families updates here</a>. </p>
+        <p>It has been ruled on Oct 31st, one day before the USDA is set to freeze SNAP payments, that <a href="https://apnews.com/live/donald-trump-news-updates-10-31-2025">the administration must keep funding SNAP</a> during the government shutdown. <a href="https://www.myflfamilies.com/supplemental-nutrition-assistance-program-snap-notification">Florida's Department of Children and Families</a> has informed recipients that November benefits would be delayed until federal funding resumes and will post updates as the situation changes. It isn't yet clear how fast EBT cards can be reloaded after the rulings—often this takes 1-2 weeks. Continue following the <a href="https://www.myflfamilies.com/supplemental-nutrition-assistance-program-snap-notification">Department of Children and Families updates here</a>. </p>
         <p>Below we list resources including food banks, pantries, hot food shares, and other food resources across Jacksonville. We will continue updating this page as new information is available. If you have information about resources contact Jax Mutual Aid Collective at info@jaxmutualaid.org </p>
     </div>
 
+    <h2>Food Pantries</h2>
+    <div class="pantries-container"></div>
+    
+    <h2>Hot Food Shares</h2>
+    <div class="food-share-container"></div>
+    
+    <h2>Other Resources</h2>
+    <div class="other-resources-container"></div>
+    
 
-
-            
-       
-        
-
-      
-
-        <script src="js/include-partials.js" defer></script>
+    <script src="js/include-partials.js" defer></script>
 </body>
 
 </html>
