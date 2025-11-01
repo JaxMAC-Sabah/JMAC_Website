@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/styles.css">
+  <title>Resources</title>
+  <style>
+    .intro-box {
+        background-color: #fce8e6;
+        border-left: 5px solid #f44336;
+        padding: 1.5em;
+        margin: 2em 0;
+        border-radius: 6px;
+        font-size: 1.1em;
+        line-height: 1.6em;
+    }
+    .pantries-container, .food-share-container, .other-resources-container {
+        display: flex;
+        flex-wrap: wrap; /* allows wrapping on smaller screens */
+        justify-content: center; /* centers items horizontally */
+        gap: 1rem; /* space between boxes */
+        margin: 1rem 0;
+    }
+
+    .pantries-card, .food-share-card, .other-resources-card {
+        flex: 1 1 220px; /* grow, shrink, and minimum width */
+        max-width: 300px; /* prevent overly wide cards */
+        border: 1.5px solid #ddd;
+        border-radius: 8px;
+        padding: 1rem;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+   
+  </style>
+</head>
+
+<body class="container"> 
+    <div id='site-header'></div>
+    <header><h1>Resources</h1></header>
+
+    <div class="intro-box">
+        <p>It has been ruled on Oct 31st, one day before the USDA is set to freeze SNAP payments, that <a href="https://apnews.com/live/donald-trump-news-updates-10-31-2025">the administration must keep funding SNAP</a> during the government shutdown. Florida's Department of Children and Families has informed recipients that November benefits would be delayed until federal funding resumes and will post updates as the situation changes. It isn't yet clear how fast EBT cards can be reloaded after the rulings—often this takes 1-2 weeks. Continue following the <strong><a href="https://www.myflfamilies.com/supplemental-nutrition-assistance-program-snap-notification">Department of Children and Families updates here</a></strong>. </p>
+        <p>Below we list resources including food banks, pantries, hot food shares, and other food resources across Jacksonville. We will continue updating this page as new information is available. If you have information about resources contact Jax Mutual Aid Collective at info@jaxmutualaid.org </p>
+    </div>
+
+    <h2>Food Pantries</h2>
+    <div class="pantries-container">
+        <div class="pantries-card"><p><strong>Eartha's Farm and Market</strong></p>
+            <p>Mutual Aid outdoor pantry is available and located near the front gate. Food Distribution” events held from 3-6pm on 11/12, 12/10, 1/21/26 & 2/18/26.</p>
+            <p>4850 Moncrief Rd, Jacksonville, FL 32209</p>
+            <p>Instagram: @earthasfarmandmarket</p>
+        </div>
+        <div class="pantries-card"><p><strong>Yellow House</strong></p>
+            <p>Outdoor mutual aid cart with food, clothes, books, hygiene, and more available every day</p>
+            <p>577 King Street Jacksonville, FL 32204</p>
+            <p>Instagram: @yellowhouseart</p>
+        </div>
+        <div class="pantries-card"><p><strong>Cafe Resistance Bookstore and Coffee Shop</strong></p>
+            <p>Is there actually a pantry in here?</p>
+            <p>5007 Soutel Dr, Jacksonville, FL 32208</p>
+            <p> Instagram: @caferesistance </p>
+        </div>
+        <div class="pantries-card"><p><strong>Salune Coffee</strong></p>
+            <p>Do we know more about their pantry?</p>
+            <p>2650 Rosselle St #3B, Jacksonville, FL 32204</p>
+            <p>Instagram: what is their instagram? do we need their insta?</p>
+        </div>
+        <div class="pantries-card"><p><strong>Black Cat Comics</strong></p>
+            <p>Community pantry in a filing cabinet right outside Black Cat Comics with hygiene supples and nonperishable foods</p>
+            <p>881 Stockton St, Jacksonville, FL 32204</p>
+        </div>
+         <div class="pantries-card"><p><strong>Feeding America Food Pantries</strong></p>
+            <p>Feeding America partners with hundreds of local organizations to distribute food across NE Florida.</p>
+            <p><a href="https://feedingnefl.org/find-food-now/">Find local Feeding America pantries</a></p>
+        </div>
+    </div>
+    
+    <h2>Hot Food Shares</h2>
+    <div class="food-share-container">
+        <div class="food-share-card"><p><strong>Food Not Bombs</strong></p>
+            <p>Every Sunday 3:30 pm</p>
+            <p>James Weldon Johnson Park: 135 W Monroe St, Jacksonville, FL 32202</p>
+            <p>Instagram: @fnbjacksonville</p>
+        </div>
+        <div class="food-share-card"><p><strong>City Council Food Share</strong></p>
+            <p>Every 2nd and 4th Tuesday of the month at 6 pm</p>
+            <p>James Weldon Johnson Park: 135 W Monroe St, Jacksonville, FL 32202</p>
+            <p>Instagram: @jaxmutualaidcollective or jaxmutualaid.org</p>
+        </div>
+        <div class="food-share-card"><p><strong>Democratic Socialists of America</strong></p>
+            <p>Nov. 29 11am - 3pm</p>
+            <p>Yellow House: 577 King St, Jacksonville, FL 32204 </p>
+            <p>Instagram: @jax_dsa</p>
+        </div>
+    </div>
+    
+    <h2>Other Resources</h2>
+    <div class="other-resources-container">
+        <div class="other-resources-card"><p><strong>Resistance Bags at Cafe Resistance</strong></p>
+            <p> Ask for a resistance bag at Cafe Resistance to recieve free to go bagged lunch for as many children as are present with you.</p>
+        </div>
+        <!-- <div class="other-resources-card"><p><strong>JMAC Meal in a Bag Distribution</strong></p>
+            <p></p>
+        </div> -->
+    </div>
+    
+
+    <script src="js/include-partials.js" defer></script>
+</body>
+
+</html>
+
+
