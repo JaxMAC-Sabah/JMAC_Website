@@ -23,7 +23,7 @@
         font-size: 1.1em;
         line-height: 1.6em;
     }
-    .drop-off-locations {
+    .drop-off-locations, .outsideJMAC{
         display: flex;
         flex-wrap: wrap; /* allows wrapping on smaller screens */
         justify-content: center; /* centers items horizontally */
@@ -31,7 +31,7 @@
         margin: 1rem 0;
     }
 
-    .drop-off-card {
+    .drop-off-card, .outsideJMAC-card {
         flex: 1 1 220px; /* grow, shrink, and minimum width */
         max-width: 300px; /* prevent overly wide cards */
         border: 1.5px solid #ddd;
@@ -45,7 +45,7 @@
         margin: 0.3rem 0;
         line-height: 1.4;
     }
-    .drop-off-card strong {
+    .drop-off-card strong, .outsideJMAC-card strong {
         font-size: 1.1rem;
         color: #b71c1c; /* red accent or your brand color */
     }
@@ -61,28 +61,27 @@
         margin-left: auto;
         margin-right: auto;
     }
-    .stores{
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-around;
-        gap: 0.25rem; 
+    .iframe-container {
+        width: 100%;
+        text-align: center;
     }
-    .store-card{
-        flex: 0 1 180px;
-        border: 1.5px solid #ddd;
-        border-radius: 5px;
-        padding:0.7rem;
-        margin: 0.75rem;
-        background-color: #fff;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    .iframe-container iframe {
+        margin: 1rem auto 2.5rem;
+        display: block;
     }
     .donations{
-        text-align: center;
+        text-align: justify;
+        width: 925px;
     }
     .donations-ul{
         display: inline-block;
-        text-align: left;
+        text-align: justify;
+    }
+    .discount-store-text{
+        text-align: justify;
+        width: 640px;
+        margin: 1rem auto ;
+        
     }
 
   </style>
@@ -117,6 +116,12 @@
                 <p>881 Stockton St. Jacksonville, FL 32204</p>
                 <p>Outdoor pantry 24/7, overstock indoors Mon-Sat 11am-7pm, Sun 11am-5pm</p>
             </div>
+            <div class="drop-off-card"><p><strong>Cork Art District Open Studio Weekend</strong></p>
+                <p>Drop off non-perishable food items while exploring a self-guided art experience showcasing over 70 local artists. </p>
+                <p>Nov 22-23 noon-6pm</p>
+                <p>2689 Rosselle St Jacksonville 32204</p>
+                <p><a href="https://www.facebook.com/events/1332526951795321/?rdid=rjgl8pDUoSoc92Ub&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F17CynhjjW9%2F#">More Information</a></p>
+            </div>
         </div>
 
         <h3>Join us for our Recipe in a Bag Packing Parties</h3>
@@ -128,45 +133,47 @@
         <h3>Items needed</h3>
         <div class="donations">
             <p> All non-perishable food items are welcome. However, we encourage donors to purchase all the ingredients needed for a complete recipe. This helps prevent shortages of specific items and ensures families receive everything required to cook a full meal. </p>
-            <img src="assets/recipes_jpg/1.jpg" alt="Chicken and Dumplings recipe" width="420" height="300" />
-            <img src="assets/recipes_jpg/2.jpg" alt="Beef and Bean Chili recipe" width="420" height="300" />
-            <img src="assets/recipes_jpg/3.jpg" alt="Creamy Corn Chowder recipe" width="420" height="300" />
-            <img src="assets/recipes_jpg/4.jpg" alt="Chili Mac recipe" width="420" height="300" />
+            <img src="assets/recipes_jpg/1.jpg" alt="Chicken and Dumplings recipe" width="460" height="300" />
+            <img src="assets/recipes_jpg/2.jpg" alt="Beef and Bean Chili recipe" width="460" height="300" />
+            <img src="assets/recipes_jpg/3.jpg" alt="Creamy Corn Chowder recipe" width="460" height="300" />
+            <img src="assets/recipes_jpg/4.jpg" alt="Chili Mac recipe" width="460" height="300" />
         </div>
             
         <h3>Discount Stores</h3>
-        <div class="stores">
-                    <div class="store-card"><p><strong>Mega Liquidation Center</strong></p>
-                        <p>6271 St Augustine Rd #18, Jacksonville, FL 32217</p>
-                        <p> Mon-Sat 9am-7pm Sun 11am-5pm</p>
-                    </div>
-                    <div class="store-card"><p><strong>Mega Liquidation Center</strong></p>
-                        <p>7293-2 Merrill Rd, Jacksonville, FL 32277</p>
-                        <p>Mon-Sat 9am-7pm Sun 10am-5pm</p>
-                    </div>
-                    <div class="store-card"><p><strong>C&B Salvage</strong></p>
-                        <p> 3811 University Blvd W # 13, Jacksonville, FL 32217</p>
-                        <p>Mon-Fri 9am-5pm Sat 8am-12 pm</p>
-                    </div>
-                    <div class="store-card"><p><strong>Solomons</strong></p>
-                        <p>1650 Art Museum Dr # 10, Jacksonville, FL 32207</p>
-                        <p> Mon-Sat 9am-5pm</p>
-                    </div>
-                    <div class="store-card"><p><strong>Ollie's Bargain Outlet</strong></p>
-                        <p>5810-1 Normandy Blvd Jacksonville, FL, 32205</p>
-                        <p> Mon-Sat 9am-9pm, Sun 10am-7pm </p>
-                    </div>
-                    <div class="store-card"><p><strong>Ollie's Bargain Outlet</strong></p>
-                        <p>9400 Atlantic Blvd #101 Jacksonville,FL, 32225</p>
-                        <p> Mon-Sat 9am-9pm, Sun 10am-7pm</p>
-                    </div>
-                    <div class="store-card"><p><strong>Shep's Discount</strong></p>
-                        <p>7890 Normandy Blvd, Jacksonville, FL 32221</p>
-                        <p> Mon-Sat 9am-6pm, Sun 10am-6pm</p>
-                    </div>
+        <p class="discount-store-text">To help keep contributions affordable, here's a map of nearby discount stores where you can find many of the needed shelf-stable items at lower prices. </p>
+        <div class="iframe-container">
+            <iframe src="https://www.google.com/maps/d/u/4/embed?mid=1gODbwNWS3eF0sDFMbgyoInTgX6mxgzw&ehbc=2E312F" width="640" height="480"></iframe>
         </div>
 
-    </div>
+        <header><h1>More Ways to Get Involved</h1></header>
+
+        <div class="outsideJMAC">
+            <div class="outsideJMAC-card"><p><strong>Eartha's Farm & Market Food Distribution</strong></p>
+                <p>Bring fresh vegetables, fresh meat, canned foods, and dry cereals.</p>
+                <p> Following Wednesdays from 12pm-6pm: 
+                <ul><li>Dec 10th</li> <li>Jan 21st</li> <li> Feb 18th</li></ul></p>
+                <p>Eartha's Farm and Market: 4850 Moncrief Rd. Jacksonville, Florida 32209</p>
+            </div>
+            <div class="outsideJMAC-card"><p><strong>Food Not Bombs</strong></p>
+                <p>Bring *vegan* food/clothes/hygiene or just help serve </p>
+                <p>Every Sunday (3 p.m.)</p>
+                <p>James Weldon Johnson Park: 135 W Monroe St, Jacksonville, FL 32202</p>
+                <p>Instagram: @fnbjacksonville</p>
+            </div>
+            <div class="outsideJMAC-card"><p><strong>City Council Food Share</strong></p>
+                <p>Bring food/clothes/hygiene or just help serve </p>
+                <p>Every 2nd and 4th Tuesday (5:30p)</p>
+                <p>James Weldon Johnson Park: 135 W Monroe St, Jacksonville, FL 32202</p>
+                <p>Instagram: @jaxmutualaidcollective or Website: <a href="www.jaxmutualaid.org">jaxmutualaid.org</a></p>
+            </div>
+            <div class="outsideJMAC-card"><p><strong>Community Dinners at Riverside Church</strong></p>
+                <p>Bring food to potluck community dinners</p>
+                <p>Wednesdays 6:30 - 8:30 PM (Nov 19, 26, Dec 3, 10,17)</p>
+                <p>Riverside Church: 2650 Park St, Jacksonville, FL 32204</p>
+                <p>Instagram: Instagram: @rivesidechurch_parkandking</p>
+            </div>
+
+        </div>
       
 
         <script src="js/include-partials.js" defer></script>
